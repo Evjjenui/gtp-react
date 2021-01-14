@@ -1,0 +1,44 @@
+.section__offers {
+  margin-top: 25px;
+}
+
+.offers {
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-item {
+    width: calc(33.33333% - 16px);
+    overflow: hidden;
+    position: relative;
+    height: 240px;
+
+    border-radius: 8px;
+    box-shadow: 0 4px 10px 0 rgba(#0a054a, 0.3);
+    transition: 0.35s linear height;
+
+    .image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-size: cover;
+      background-position: center;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      display: block;
+    }
+  }
+}
+
+.tabs-opened {
+  .offers-item {
+    height: 66px;
+  }
+}

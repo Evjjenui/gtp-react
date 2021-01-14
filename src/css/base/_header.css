@@ -1,0 +1,95 @@
+.header {
+  color: #fff;
+  width: 100%;
+  min-height: 64px;
+  position: relative;
+  background-color: #4654ef;
+  z-index: 110;
+
+  p {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  > .content-wrapper {
+    padding-top: 22px;
+    /* @include flexbox(); */
+
+    > div {
+      margin-right: 64px;
+
+      &.header_market {
+        margin-right: 100px;
+      }
+
+      &.header_user-name {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .icon {
+    color: #fff;
+  }
+
+  &_market,
+  &_user-name {
+    .icon {
+      margin: 0 0 0 6px;
+    }
+  }
+
+  &_phone {
+    .icon {
+      &:before {
+        content: "K";
+      }
+    }
+  }
+
+  &_name {
+    .icon {
+      &:before {
+        content: "M";
+      }
+    }
+  }
+
+  &_email {
+    .icon {
+      &:before {
+        content: "E";
+      }
+    }
+  }
+
+  &_user-name {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &_drop {
+    padding: 0 0 20px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    background-color: #4654ef;
+
+    &-item {
+      padding: 8px 0;
+      display: block;
+
+      span {
+        color: #8c8fad;
+        padding-left: 16px;
+      }
+    }
+  }
+}
+
+.logout {
+  &:before {
+    content: "H";
+  }
+}

@@ -1,0 +1,19 @@
+.authorization-page {
+
+  label {
+    font-size: 12px;
+  }
+}
+
+.info-line {
+  padding: 0 14%;
+
+  span {
+    padding: 0 4px; 
+
+    svg {
+      width: 10px;
+      height: 9px;
+    }
+  }
+}

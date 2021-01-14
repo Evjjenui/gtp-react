@@ -1,0 +1,35 @@
+.pricing-info {
+  width: 100%;
+
+  &_item {
+    overflow: hidden;
+    padding-top: 8px;
+    font-size: 12px;
+    line-height: 1.5em;
+
+    p,
+    span {
+      color: inherit;
+    }
+
+    p {
+      float: left;
+      text-align: center;
+      min-width: 45px;
+    }
+
+    span {
+      float: right;
+    }
+    
+    &__top {
+      color: #8C8FAD;
+      padding-top: 0;
+    }
+  }
+
+  &_content {
+    margin-top: 8px;
+    border-top: 1px solid #8C8FAD;
+  }
+}

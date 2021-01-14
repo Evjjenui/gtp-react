@@ -1,0 +1,7 @@
+@media screen and (max-width: 639px) {
+  @import "layout";
+
+  @import "pages/authorization";
+
+  @import "components/main";
+}

@@ -1,0 +1,28 @@
+.product {
+  &-description {
+    background-color: #fff;
+    overflow: hidden;
+    height: calc(100% - 80px);
+    width: 290px;
+    position: fixed;
+    z-index: 100;
+    top: 72px;
+    right: 0;
+    padding: 40px 25px 0 40px;
+
+    transform: translate3d(0, 0, 0);
+    transition: 0.35s linear transform;
+    box-shadow: 0 4px 16px rgba(#000000, 0.07);
+    border-radius: 8px 0 0 8px;
+
+    .icon.close {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+
+      &:before {
+        color: #4654ef;
+      }
+    }
+  }
+}

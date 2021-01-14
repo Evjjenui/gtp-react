@@ -1,0 +1,33 @@
+.browser-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8c400;
+  z-index: 100;
+
+  &:not(.hide) + .wrapper {
+    transform: translate3d(0, 51px, 0);
+  }
+
+  .content-wrapper {
+    height: 51px;
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    max-width: 90%;
+    color: #fff;
+
+    .icon {
+      &:before {
+        content: "F";
+      }
+    }
+  }
+
+  .close {
+    margin-left: auto;
+  }
+}

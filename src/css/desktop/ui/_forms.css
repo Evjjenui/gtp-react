@@ -1,0 +1,24 @@
+input,
+textarea {
+  background: none;
+  background-color: #fff;
+  outline: none;
+  color: #242a6d;
+  font-size: 16px;
+  border: none;
+
+  border-radius: 4px;
+
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-moz-placeholder,
+  &:-ms-input-placeholder {
+    color: #8c8fad;
+  }
+}
+
+input {
+  height: 35px;
+  line-height: 35px;
+  padding: 0 10px 0 16px;
+}
