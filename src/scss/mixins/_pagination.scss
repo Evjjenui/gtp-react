@@ -1,6 +1,6 @@
 @mixin pagination-pages() {
-  $pagination-color: #c2c2c2;
-  $pagination-color-current: #1f262a;
+  $pagination-color: #C2C2C2;
+  $pagination-color-current: #1F262A;
   $pagination-font-size: 15px;
   $pagination-width: 44px;
   $pagination-height: 37px;
@@ -32,8 +32,8 @@
         position: relative;
 
         &.pag_prev {
-          /* @include border-radius(100%); */
-          background-color: #eaeaea;
+          @include border-radius(100%);
+          background-color: #EAEAEA;
           width: 37px;
           height: 37px;
           font-size: 0;
@@ -41,7 +41,7 @@
           &:before {
             background: url(../images/page_prev.png) left top no-repeat;
             background-size: 8px;
-            content: "";
+            content: '';
             display: block;
             width: 8px;
             height: 12px;
@@ -49,10 +49,11 @@
             top: 50%;
             left: 50%;
             margin: -6px 0 0 -5px;
+
           }
 
           &:hover {
-            background-color: #2394fe;
+            background-color: #2394FE;
           }
 
           a {
@@ -63,8 +64,8 @@
         }
 
         &.pag_next {
-          /* @include border-radius(100%); */
-          background-color: #eaeaea;
+          @include border-radius(100%);
+          background-color: #EAEAEA;
           width: 37px;
           height: 37px;
           font-size: 0;
@@ -72,7 +73,7 @@
           &:before {
             background: url(../images/page_next.png) left top no-repeat;
             background-size: 8px;
-            content: "";
+            content: '';
             display: block;
             width: 8px;
             height: 12px;
@@ -80,10 +81,11 @@
             top: 50%;
             left: 50%;
             margin: -6px 0 0 -3px;
+
           }
 
           &:hover {
-            background-color: #2394fe;
+            background-color: #2394FE;
           }
 
           a {

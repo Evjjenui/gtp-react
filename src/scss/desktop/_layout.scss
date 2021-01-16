@@ -1,0 +1,74 @@
+.button {
+  @include button("medium", "rose");
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 16px;
+  text-align: center;
+
+  &.mr {
+    margin-right: 6px;
+  }
+
+  &.ml {
+    margin-left: 6px;
+  }
+
+  &:before {
+    display: inline-block;
+    vertical-align: middle;
+    color: inherit;
+    font-family: "GTP-font";
+  }
+
+  &.arrow {
+    cursor: pointer;
+
+    &:before {
+      content: 'A';
+      font-size: 8px;
+    }
+  }
+
+  &.close {
+    cursor: pointer;
+
+    &:before {
+      content: 'C';
+      color: #fff;
+      font-size: 12px;
+    }
+  }
+}
+
+.content-wrapper {
+  max-width: 1280px;
+  padding: 0 20px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.wrapper {
+  position: relative;
+  
+  @include transform(translate3d(0,0,0));
+  @include transition(.35s linear transform);
+}
+
+
+
+.component-title {
+  text-align: center;
+
+  > * {
+    font-size: 24px;
+    line-height: 1.5em;
+    font-weight: bold;
+    letter-spacing: .8px;
+  }
+}

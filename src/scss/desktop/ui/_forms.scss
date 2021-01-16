@@ -3,17 +3,17 @@ textarea {
   background: none;
   background-color: #fff;
   outline: none;
-  color: #242a6d;
+  color: #242A6D;
   font-size: 16px;
   border: none;
 
-  border-radius: 4px;
+  @include border-radius(4px);
 
   &::-webkit-input-placeholder,
   &::-moz-placeholder,
   &:-moz-placeholder,
   &:-ms-input-placeholder {
-    color: #8c8fad;
+    color: #8C8FAD;
   }
 }
 

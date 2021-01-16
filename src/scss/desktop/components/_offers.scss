@@ -3,8 +3,9 @@
 }
 
 .offers {
+
   &-content {
-    display: flex;
+    @include flexbox();
     justify-content: space-between;
     align-items: center;
   }
@@ -15,9 +16,9 @@
     position: relative;
     height: 240px;
 
-    border-radius: 8px;
-    box-shadow: 0 4px 10px 0 rgba(#0a054a, 0.3);
-    transition: 0.35s linear height;
+    @include border-radius(8px);
+    @include box-shadow(0 4px 10px 0 rgba(#0A054A, .3));
+    @include transition(.35s linear height);
 
     .image {
       position: absolute;
@@ -37,7 +38,9 @@
   }
 }
 
+
 .tabs-opened {
+
   .offers-item {
     height: 66px;
   }

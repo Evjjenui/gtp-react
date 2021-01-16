@@ -4,15 +4,11 @@
   text-align: center;
   position: relative;
 
-  background-image: -webkit-linear-gradient(
-    bottom left,
-    #4048ef 0%,
-    #5a7bef 100%
-  );
-  background-image: -o-linear-gradient(bottom left, #4048ef 0%, #5a7bef 100%);
-  background-image: linear-gradient(to top right, #4048ef 0%, #5a7bef 100%);
+  background-image: -webkit-linear-gradient(bottom left, #4048EF 0%, #5A7BEF 100%);
+  background-image: -o-linear-gradient(bottom left, #4048EF 0%, #5A7BEF 100%);
+  background-image: linear-gradient(to top right, #4048EF 0%, #5A7BEF 100%);
 
-  display: flex;
+  @include flexbox();
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;

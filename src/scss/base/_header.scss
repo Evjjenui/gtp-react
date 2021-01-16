@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 64px;
   position: relative;
-  background-color: #4654ef;
+  background-color: #4654EF;
   z-index: 110;
 
   p {
@@ -13,7 +13,7 @@
 
   > .content-wrapper {
     padding-top: 22px;
-    /* @include flexbox(); */
+    @include flexbox();
 
     > div {
       margin-right: 64px;
@@ -34,31 +34,38 @@
 
   &_market,
   &_user-name {
+    
     .icon {
       margin: 0 0 0 6px;
     }
   }
 
   &_phone {
+    
     .icon {
+
       &:before {
-        content: "K";
+        content: 'K';
       }
     }
   }
 
   &_name {
+    
     .icon {
+
       &:before {
-        content: "M";
+        content: 'M';
       }
     }
   }
 
   &_email {
+    
     .icon {
+
       &:before {
-        content: "E";
+        content: 'E';
       }
     }
   }
@@ -74,14 +81,14 @@
     position: absolute;
     z-index: 1;
     top: 100%;
-    background-color: #4654ef;
+    background-color: #4654EF;
 
     &-item {
       padding: 8px 0;
       display: block;
 
       span {
-        color: #8c8fad;
+        color: #8C8FAD;
         padding-left: 16px;
       }
     }
@@ -89,7 +96,8 @@
 }
 
 .logout {
+  
   &:before {
-    content: "H";
+    content: 'H';
   }
 }

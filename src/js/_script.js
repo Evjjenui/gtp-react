@@ -1,2 +1,2 @@
-require('../css/application.css')
+require('../scss/application.scss')
 require('./main.js')
