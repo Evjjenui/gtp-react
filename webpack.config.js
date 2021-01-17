@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -24,7 +24,7 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
-          // "style-loader",
+          "style-loader",
           // Translates CSS into CommonJS
           "css-loader",
           // Compiles Sass to CSS
@@ -50,14 +50,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html"
     }),
-    new CleanWebpackPlugin();
+    new CleanWebpackPlugin(),
   ],
 
   // Development server
   devServer: {
     contentBase: path.resolve(__dirname, 'build'),
     port: 4000,
-    writeToDisk: true
+    writeToDisk: true,
+    hot: true
   },
 
   mode: process.env.NODE_ENV || 'development'
