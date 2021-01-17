@@ -12,10 +12,10 @@
   clear: both;
   outline: none;
   text-transform: uppercase;
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
 
-  @include transition(.25s all ease-in);
-  @include border-radius(25px)
+  @include transition(0.25s all ease-in);
+  @include border-radius(25px);
 
   @if $button-size == "big" {
     font-size: 15px;
@@ -40,9 +40,27 @@
   // button bg
 
   @if $button-bg == "rose" {
-    background-image: -webkit-linear-gradient(312deg, #E83F94, #F54E5E, #F54E5E, #E83F94);
-    background-image: -o-linear-gradient(312deg, #E83F94, #F54E5E, #F54E5E, #E83F94);
-    background-image: linear-gradient(42deg, #E83F94, #F54E5E, #F54E5E, #E83F94);
+    background-image: -webkit-linear-gradient(
+      312deg,
+      #e83f94,
+      #f54e5e,
+      #f54e5e,
+      #e83f94
+    );
+    background-image: -o-linear-gradient(
+      312deg,
+      #e83f94,
+      #f54e5e,
+      #f54e5e,
+      #e83f94
+    );
+    background-image: linear-gradient(
+      42deg,
+      #e83f94,
+      #f54e5e,
+      #f54e5e,
+      #e83f94
+    );
 
     background-size: 400%;
     background-position: 0 0;

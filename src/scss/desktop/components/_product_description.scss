@@ -1,5 +1,4 @@
 .product {
-
   &-description {
     background-color: #fff;
     overflow: hidden;
@@ -13,8 +12,8 @@
 
     // @include transform(translate3d(100%, 0, 0));
     @include transform(translate3d(0, 0, 0));
-    @include transition(.35s linear transform);
-    @include box-shadow(0 4px 16px rgba(#000000, .07))
+    @include transition(0.35s linear transform);
+    @include box-shadow(0 4px 16px rgba(#000000, 0.07));
     @include border-radius(8px 0 0 8px);
 
     .icon.close {
@@ -23,7 +22,7 @@
       left: 16px;
 
       &:before {
-        color: #4654EF;
+        color: #4654ef;
       }
     }
   }
