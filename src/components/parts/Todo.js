@@ -2,12 +2,10 @@ import React, {useState} from "react";
 
 function Todo() {
   const [text, setText] = useState('');
-  const [items, setItems] = useState([{text: 'sada', id: 1}]);
+  const [items, setItems] = useState([]);
 
-  // console.log(items);
 
   function submitHandler(e) {
-    console.log(items);
     e.preventDefault();
     if (text.length === 0) {
       return;
@@ -16,36 +14,34 @@ function Todo() {
       text: text,
       id: Date.now()
     }
-    console.log(newItem);
     
-    // setItems([...items, newItem]);
+    setItems([...items, newItem]);
+    setText('');
   }
 
-  // function TodoList(setItems) {
-  //   return (
-  //     <ul>
-  //       {items.map(item => (
-  //         <li key={item.id}>{item.text}</li>
-  //       ))}
-  //     </ul>
-  //   )
-  // }
+  function TodoList() {
+    return (
+      <ul>
+        {items.map(item => (
+          <li key={item.id}>{item.text}</li>
+        ))}
+      </ul>
+    )
+  }
 
   return (
     <div>
       <p><b>Todo List</b></p>
-      <form onSubmit = {(e) => setItems(submitHandler(e))}>
+      <form onSubmit = {(e) => submitHandler(e)}>
         <input
           onChange = {(e) => setText(e.target.value)}
           value = {text}
         />
         <button>Добавить</button>
       </form>
-        {/* <TodoList /> */}
+        <TodoList />
     </div>
   )
 }
-
-
 
 export default Todo;
