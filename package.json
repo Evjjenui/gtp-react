@@ -2,6 +2,7 @@
   "name": "evjjenui",
   "scripts": {
     "watch": "NODE_ENV=development webpack serve",
+    "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
     "build": "NODE_ENV=production webpack"
   },
   "dependencies": {
@@ -12,8 +13,10 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
     "html-webpack-plugin": "^4.5.1",
+    "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "remarkable": "^2.0.1",
     "sass": "^1.32.4",
     "sass-loader": "^10.1.1",
     "slick-carousel": "^1.8.1",
