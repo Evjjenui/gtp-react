@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import TodoList from "./particles/TodoList.js";
 
 function Todo() {
   const [text, setText] = useState('');
@@ -19,16 +20,6 @@ function Todo() {
     setText('');
   }
 
-  function TodoList() {
-    return (
-      <ul>
-        {items.map(item => (
-          <li key={item.id}>{item.text}</li>
-        ))}
-      </ul>
-    )
-  }
-
   return (
     <div>
       <p><b>Todo List</b></p>
@@ -39,7 +30,7 @@ function Todo() {
         />
         <button>Добавить</button>
       </form>
-        <TodoList />
+        <TodoList list={items}/>
     </div>
   )
 }
