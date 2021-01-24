@@ -10,8 +10,8 @@ class App extends Component {
     return (
       <div>
         <h1>типа H1 могуsdadas</h1>
-        <Timer startCount={0}/>
-        <Todo/>
+        <Timer />
+        <Todo />
         {/* <Markdown/> */}
         {/* <BrowserAlert name="LOX"/> */}
       </div>

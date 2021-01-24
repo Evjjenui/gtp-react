@@ -1,32 +1,25 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
-class Timer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { text: props.startCount };
-  }
+function Timer () {
+  const [count, setCount] = useState(0);
 
-  tick() {
-    this.setState(state =>({
-      text: state.text + 1
-    }));
-  }
-
-  componentDidMount() {
-    this.interval = setInterval(() => this.tick(), 1000);
+  function tick() {
+    setCount(count + 1)
   };
 
-  componentWillUnmount() {
-    clearInterval(this.interval)
-  };
+  useEffect(() => {
+    const intervalId = setInterval(tick, 1000);
+    
+    return function cleanup() {
+      clearInterval(intervalId);
+    };
+  });
 
-  render() {
-    return (
-      <div>
-        Секундомер: {this.state.text} .
-      </div>
-    )
-  }
+  return (
+    <div>
+      Секундомер: {count} .
+    </div>
+  )
 };
 
 export default Timer;
