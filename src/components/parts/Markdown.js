@@ -1,33 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import { Remarkable } from "remarkable";
   
-class Markdown extends React.Component {
-  constructor(props) {
-    super(props);
-    this.md = new Remarkable();
-    this.changeHandler = this.changeHandler.bind(this);
-    this.state = { text: '' };
-  }
+function Markdown () {
+  const [htmlText, setHtmlText] = useState('');
+  const md = new Remarkable();
 
-  changeHandler(e) {
-    this.setState({ text: e.target.value });
-  }
+  function getRawMarkup() {
+    return { __html: md.render(htmlText) };
+  };
 
-  getRawMarkup() {
-    return { __html: this.md.render(this.state.text) };
-  }
-
-  render () {
-    return (
-      <div>
-        <textarea
-          onChange = { this.changeHandler }
-          defaultValue = { this.state.text }>
-        </textarea>
-        <div dangerouslySetInnerHTML={ this.getRawMarkup() } />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <textarea
+        onChange = { (e) => setHtmlText(e.target.value) }
+        defaultValue = { htmlText }>
+      </textarea>
+      <div dangerouslySetInnerHTML={ getRawMarkup() } />
+    </div>
+  );
 }
 
 export default Markdown;
