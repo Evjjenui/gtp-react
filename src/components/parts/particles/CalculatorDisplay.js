@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 
 function CalculatorDisplay(props) {
 
   return (
     <div className="display">
-      <p>display</p>
+      {props.result}
     </div>
   );
 };

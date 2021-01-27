@@ -1,12 +1,25 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 
-function ButtonAction(props) {
+class ButtonAction extends React.Component{
+  constructor(props) {
+    super(props);
+    this.clickHandler = this.clickHandler.bind(this);
+  };
 
-  return (
-    <div className="button orange">
-      <button>{props.actionSign}</button>
-    </div>
-  );
+  clickHandler(e) {
+    this.props.onCheckAction(e.target.innerText);
+  };
+
+  render () {
+
+    return (
+      <div className="button orange">
+        <button onClick = {this.clickHandler}>
+          {this.props.actionSign}
+        </button>
+      </div>
+    );
+  }
 };
 
 export default ButtonAction;
