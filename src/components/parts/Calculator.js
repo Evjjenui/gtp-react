@@ -2,20 +2,8 @@ import React, {useState, useEffect} from "react";
 import ButtonAction from "./particles/ButtonAction";
 import ButtonNumber from "./particles/ButtonNumber";
 import CalculatorDisplay from "./particles/CalculatorDisplay";
+import calculate from "./calc_logic/calculate";
 
-function calculate (stateObj, number) {
-  if (number === "AC") {
-    return stateObj = {
-      sum: '',
-      addNumber: '',
-    }
-  };
-
-  stateObj.sum = +stateObj.sum + +number;
-
-  stateObj.sum.toString();
-  return stateObj;
-};
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -24,16 +12,27 @@ class Calculator extends React.Component {
     this.updateNumber = this.updateNumber.bind(this);
     this.state = {
       sum: '',
-      addNumber: '',
+      addNumber: ''
     };
   };
 
-  updateAction() {
-
+  updateAction(sign) {
+    this.setState(calculate(this.state, sign));
   };
 
   updateNumber(number) {
-    this.setState(calculate(this.state, number));
+    this.setState(
+
+      () => {
+        if (this.state.sum === '') {
+          return {
+            sum: number,
+            addNumber: ''
+          }
+        };
+
+        return {addNumber: this.state.addNumber + number};
+      })
   };
 
   render () {
@@ -41,9 +40,9 @@ class Calculator extends React.Component {
     return (
       <div className="calculator">
         <CalculatorDisplay result={this.state.sum || '0'}/>
-        <ButtonNumber 
-          onCheckedNumber={this.updateNumber}
-          value="AC"/>
+        <ButtonAction
+          onCheckAction={this.updateAction}
+          actionSign="AC"/>
         <ButtonNumber 
           onCheckedNumber={this.updateNumber}
           value="+/-"/>
@@ -76,7 +75,7 @@ class Calculator extends React.Component {
           value="6"/>
         <ButtonAction
           onCheckAction={this.updateAction}
-          actionSign="*"/>
+          actionSign="x"/>
         <ButtonNumber 
           onCheckedNumber={this.updateNumber}
           value="7"/>
