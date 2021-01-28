@@ -12,17 +12,23 @@ class Calculator extends React.Component {
     this.updateNumber = this.updateNumber.bind(this);
     this.state = {
       sum: '',
-      addNumber: ''
+      addNumber: '',
+      operation: ''
     };
   };
 
   updateAction(sign) {
-    this.setState(calculate(this.state, sign));
+    this.setState(() => {
+      if (this.state.operation) {
+        return calculate(this.state, sign);
+      }
+      return {operation: sign} 
+    })
   };
 
   updateNumber(number) {
     this.setState(
-
+      
       () => {
         if (this.state.sum === '') {
           return {
@@ -31,15 +37,22 @@ class Calculator extends React.Component {
           }
         };
 
-        return {addNumber: this.state.addNumber + number};
-      })
-  };
+        if (this.state.operation === '') {
+          return {
+            sum: this.state.sum + number,
+            addNumber: ''
+          }
+        };
+
+        return {addNumber: this.state.addNumber + number}
+      });
+  }
 
   render () {
 
     return (
       <div className="calculator">
-        <CalculatorDisplay result={this.state.sum || '0'}/>
+        <CalculatorDisplay result={this.state.addNumber || this.state.sum || '0'}/>
         <ButtonAction
           onCheckAction={this.updateAction}
           actionSign="AC"/>

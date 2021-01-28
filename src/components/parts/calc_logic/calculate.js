@@ -8,27 +8,30 @@ export default function calculate (stateObj, sign) {
     }
   };
 
-  if (sign === "+") {
+  if (stateObj.operation === "+") {
 
     return {
       sum: +stateObj.sum + +stateObj.addNumber,
-      addNumber: ''
+      addNumber: '',
+      operation: sign
     };
   };
   
-  if (sign === "x") {
+  if (stateObj.operation === "x") {
 
     return {
       sum: +stateObj.sum * +stateObj.addNumber,
-      addNumber: ''
+      addNumber: '',
+      operation: sign
     };
   };
   
-  if (sign === "-") {
+  if (stateObj.operation === "-") {
 
     return {
       sum: +stateObj.sum - +stateObj.addNumber,
-      addNumber: ''
+      addNumber: '',
+      operation: sign
     };
   };
 };
