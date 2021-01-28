@@ -11,7 +11,7 @@ class Calculator extends React.Component {
     this.updateAction = this.updateAction.bind(this);
     this.updateNumber = this.updateNumber.bind(this);
     this.state = {
-      sum: '',
+      sum: '0',
       addNumber: '',
       operation: ''
     };
@@ -28,11 +28,39 @@ class Calculator extends React.Component {
         }
       }
 
+      if (sign === ".") {
+        if (this.state.addNumber) {
+
+          if (this.state.addNumber.includes('.')) {
+            return {}
+          };
+
+          return {addNumber: this.state.addNumber + '.'}
+        };
+
+        return {
+          sum: '0.',
+          addNumber: '0.',
+          operation: ''
+        }
+      }
+
       if (sign === "%") {
 
         return {
           sum: this.state.sum / 100,
         };
+      };
+      
+      if (sign === "+/-") {
+
+        if (this.state.addNumber) {
+          return {addNumber:  (-1 * parseFloat(this.state.addNumber).toString())}
+        }
+        if (this.state.sum) {
+          return {sum:  (-1 * parseFloat(this.state.sum).toString())}
+        }
+        return {}
       };
 
       if (this.state.operation) {
