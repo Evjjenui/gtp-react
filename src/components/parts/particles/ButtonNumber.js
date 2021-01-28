@@ -1,5 +1,9 @@
 import React, {useState} from "react";
 
+const buttonCLass = {
+  wide: "wide"
+}
+
 class ButtonNumber extends React.Component {
   constructor(props) {
     super(props);
@@ -11,9 +15,10 @@ class ButtonNumber extends React.Component {
   }
 
   render() {
+    const styleClass = this.props.styleClass;
 
     return (
-      <div className="button">
+      <div className={`button ${buttonCLass[styleClass] || ''}`}>
         <button onClick = {this.clickHandler}>
             {this.props.value}
         </button>

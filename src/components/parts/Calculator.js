@@ -19,6 +19,22 @@ class Calculator extends React.Component {
 
   updateAction(sign) {
     this.setState(() => {
+
+      if (sign === "AC") {
+        return {
+          sum: '',
+          addNumber: '',
+          operation: '',
+        }
+      }
+
+      if (sign === "%") {
+
+        return {
+          sum: this.state.sum / 100,
+        };
+      };
+
       if (this.state.operation) {
         return calculate(this.state, sign);
       }
@@ -51,65 +67,71 @@ class Calculator extends React.Component {
   render () {
 
     return (
-      <div className="calculator">
+      <div className='calculator'>
         <CalculatorDisplay result={this.state.addNumber || this.state.sum || '0'}/>
         <ButtonAction
           onCheckAction={this.updateAction}
-          actionSign="AC"/>
-        <ButtonNumber 
-          onCheckedNumber={this.updateNumber}
-          value="+/-"/>
-        <ButtonNumber 
-          onCheckedNumber={this.updateNumber}
-          value="%"/>
+          actionSign='AC'/>
         <ButtonAction
           onCheckAction={this.updateAction}
-          actionSign="+"/>
-        <ButtonNumber 
-          onCheckedNumber={this.updateNumber}
-          value="1"/>
-        <ButtonNumber 
-          onCheckedNumber={this.updateNumber}
-          value="2"/>
-        <ButtonNumber 
-          onCheckedNumber={this.updateNumber}
-          value="3"/>
+          actionSign='+/-'/>
         <ButtonAction
           onCheckAction={this.updateAction}
-          actionSign="-"/>
-        <ButtonNumber 
-          onCheckedNumber={this.updateNumber}
-          value="4"/>
-        <ButtonNumber 
-          onCheckedNumber={this.updateNumber}
-          value="5"/>
-        <ButtonNumber 
-          onCheckedNumber={this.updateNumber}
-          value="6"/>
+          actionSign='%'/>
         <ButtonAction
+          bgStyle="orange"
           onCheckAction={this.updateAction}
-          actionSign="x"/>
+          actionSign='+'/>
         <ButtonNumber 
           onCheckedNumber={this.updateNumber}
-          value="7"/>
+          value='1'/>
         <ButtonNumber 
           onCheckedNumber={this.updateNumber}
-          value="8"/>
+          value='2'/>
         <ButtonNumber 
           onCheckedNumber={this.updateNumber}
-          value="9"/>
+          value='3'/>
         <ButtonAction
+          bgStyle="orange"
           onCheckAction={this.updateAction}
-          actionSign="/"/>
+          actionSign='-'/>
         <ButtonNumber 
           onCheckedNumber={this.updateNumber}
-          value="0"/>
+          value='4'/>
         <ButtonNumber 
           onCheckedNumber={this.updateNumber}
-          value="."/>
+          value='5'/>
+        <ButtonNumber 
+          onCheckedNumber={this.updateNumber}
+          value='6'/>
         <ButtonAction
+          bgStyle="orange"
           onCheckAction={this.updateAction}
-          actionSign="="/>
+          actionSign='x'/>
+        <ButtonNumber 
+          onCheckedNumber={this.updateNumber}
+          value='7'/>
+        <ButtonNumber 
+          onCheckedNumber={this.updateNumber}
+          value='8'/>
+        <ButtonNumber 
+          onCheckedNumber={this.updateNumber}
+          value='9'/>
+        <ButtonAction
+          bgStyle="orange"
+          onCheckAction={this.updateAction}
+          actionSign='/'/>
+        <ButtonNumber 
+          styleClass='wide'
+          onCheckedNumber={this.updateNumber}
+          value='0'/>
+        <ButtonNumber 
+          onCheckedNumber={this.updateNumber}
+          value='.'/>
+        <ButtonAction
+          bgStyle="orange"
+          onCheckAction={this.updateAction}
+          actionSign='='/>
       </div>
     );
   }

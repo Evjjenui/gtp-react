@@ -1,5 +1,9 @@
 import React, {useState} from "react";
 
+const buttonCLass = {
+  orange: "orange"
+}
+
 class ButtonAction extends React.Component{
   constructor(props) {
     super(props);
@@ -11,9 +15,10 @@ class ButtonAction extends React.Component{
   };
 
   render () {
+    const bgStyle = this.props.bgStyle;
 
     return (
-      <div className="button orange">
+      <div className={`button ${buttonCLass[bgStyle] || ''} `}>
         <button onClick = {this.clickHandler}>
           {this.props.actionSign}
         </button>
