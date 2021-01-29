@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Calculator from "./parts/Calculator";
+import TicTacToe from "./parts/TicTacToe";
 
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
     return (
       <div>
         <Calculator />
+        {/* <TicTacToe /> */}
       </div>
     )
   }

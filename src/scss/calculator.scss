@@ -12,8 +12,7 @@
   color: #fff;
   padding: 10px;
   text-align: right;
-  grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column: span 4;
   font-size: 60px;
   line-height: 84px;
 }
@@ -43,4 +42,20 @@
     background-color: #f5923e;
     color: #fff;
   }
+}
+
+.ticGrid {
+  margin: 20px;
+  width: 150px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tickItem {
+  border: 1px solid #000;
+  height: 50px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 45px;
+  cursor: default;
 }

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import ButtonAction from "./particles/ButtonAction";
 import ButtonNumber from "./particles/ButtonNumber";
 import CalculatorDisplay from "./particles/CalculatorDisplay";
-import calculate from "./calc_logic/calculate";
+import calcTransform from "./calc_logic/calc_transformations";
 
 
 class Calculator extends React.Component {
@@ -18,56 +18,7 @@ class Calculator extends React.Component {
   };
 
   updateAction(sign) {
-    this.setState(() => {
-
-      if (sign === "AC") {
-        return {
-          sum: '',
-          addNumber: '',
-          operation: '',
-        }
-      }
-
-      if (sign === ".") {
-        if (this.state.addNumber) {
-
-          if (this.state.addNumber.includes('.')) {
-            return {}
-          };
-
-          return {addNumber: this.state.addNumber + '.'}
-        };
-
-        return {
-          sum: '0.',
-          addNumber: '0.',
-          operation: ''
-        }
-      }
-
-      if (sign === "%") {
-
-        return {
-          sum: this.state.sum / 100,
-        };
-      };
-      
-      if (sign === "+/-") {
-
-        if (this.state.addNumber) {
-          return {addNumber:  (-1 * parseFloat(this.state.addNumber).toString())}
-        }
-        if (this.state.sum) {
-          return {sum:  (-1 * parseFloat(this.state.sum).toString())}
-        }
-        return {}
-      };
-
-      if (this.state.operation) {
-        return calculate(this.state, sign);
-      }
-      return {operation: sign} 
-    })
+    this.setState(calcTransform(this.state, sign));
   };
 
   updateNumber(number) {
@@ -82,6 +33,15 @@ class Calculator extends React.Component {
         };
 
         if (this.state.operation === '') {
+
+          if (this.state.sum === '0') {
+            
+            return {
+              sum: number,
+              addNumber: ''
+            }  
+          }
+
           return {
             sum: this.state.sum + number,
             addNumber: ''
