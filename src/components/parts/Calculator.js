@@ -113,9 +113,9 @@ class Calculator extends React.Component {
           styleClass='wide'
           onCheckedNumber={this.updateNumber}
           value='0'/>
-        <ButtonNumber 
-          onCheckedNumber={this.updateNumber}
-          value='.'/>
+        <ButtonAction 
+          onCheckAction={this.updateAction}
+          actionSign='.'/>
         <ButtonAction
           bgStyle="orange"
           onCheckAction={this.updateAction}
