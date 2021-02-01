@@ -7,7 +7,7 @@ class TicItem extends React.Component {
   }
 
   clickHandler(e) {
-    this.props.clickHandler(this.props.value);
+    this.props.clickHandler(e.target.innerText);
   };
 
   render() {

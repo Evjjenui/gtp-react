@@ -6,30 +6,50 @@ class TicTacToe extends React.Component {
     super(props);
     this.updateItem = this.updateItem.bind(this);
     this.state = {
-      cross: 'x'
+      items: ['', '', '', '', '', '', '', '', ''],
+      squareSign: 'x'
     }
   };
 
-  updateItem(value) {
-    if (value) {
-      console.log(`square not empty '${value}'`);
-      return true;
-    };
-    
-    console.log(`square is empty`);
-    return false;
+  updateItem(index) {
+    let itemsCopy = [...this.state.items];
+    let selectedItem = itemsCopy[index];
+
+    if (!selectedItem) {
+      selectedItem = this.state.squareSign;
+      itemsCopy[index] = selectedItem;
+
+      if (this.state.squareSign === 'x') {
+
+        return this.setState({
+          items: itemsCopy,
+          squareSign: 'o'
+        });
+      }
+
+      return this.setState({
+        items: itemsCopy,
+        squareSign: 'x'
+      });
+
+    } else {
+      return;
+    }
   };
 
   render () {
-    const items = [];
-    for (var i = 0; i < 9; i++) {
-      items.push(<TicItem key={i} value='' clickHandler={this.updateItem}/>)
-    }
+    const items = this.state.items;
+    
     return (
 
       <div>
         <div className='ticGrid'>
-          {items}
+          {this.state.items.map((item, index) => (
+            <TicItem
+              key={index}
+              value={item}
+              clickHandler={ () => this.updateItem(index)}/>
+          ))}
         </div>
       </div>
     )

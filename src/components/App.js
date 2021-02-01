@@ -7,8 +7,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Calculator />
-        {/* <TicTacToe /> */}
+        {/* <Calculator /> */}
+        <TicTacToe />
       </div>
     )
   }

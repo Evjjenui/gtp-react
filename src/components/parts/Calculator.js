@@ -22,34 +22,32 @@ class Calculator extends React.Component {
   };
 
   updateNumber(number) {
-    this.setState(
-      
-      () => {
-        if (this.state.sum === '') {
+    this.setState(() => {
+      if (this.state.sum === '') {
+        return {
+          sum: number,
+          addNumber: ''
+        }
+      };
+
+      if (this.state.operation === '') {
+
+        if (this.state.sum === '0') {
+          
           return {
             sum: number,
             addNumber: ''
-          }
-        };
+          }  
+        }
 
-        if (this.state.operation === '') {
+        return {
+          sum: this.state.sum + number,
+          addNumber: ''
+        }
+      };
 
-          if (this.state.sum === '0') {
-            
-            return {
-              sum: number,
-              addNumber: ''
-            }  
-          }
-
-          return {
-            sum: this.state.sum + number,
-            addNumber: ''
-          }
-        };
-
-        return {addNumber: this.state.addNumber + number}
-      });
+      return {addNumber: this.state.addNumber + number}
+    });
   }
 
   render () {
