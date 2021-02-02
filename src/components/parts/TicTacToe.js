@@ -1,40 +1,27 @@
 import React from 'react';
 import TicItem from './particles/TicItem'
+import krestiki from './krestiki/krestiki'
 
 class TicTacToe extends React.Component {
   constructor(props) {
     super(props);
     this.updateItem = this.updateItem.bind(this);
+    this.resetGame = this.resetGame.bind(this);
     this.state = {
       items: ['', '', '', '', '', '', '', '', ''],
       squareSign: 'x'
     }
   };
 
+  resetGame() {
+    this.setState({
+      items: ['', '', '', '', '', '', '', '', ''],
+      squareSign: 'x'
+    })
+  }
+
   updateItem(index) {
-    let itemsCopy = [...this.state.items];
-    let selectedItem = itemsCopy[index];
-
-    if (!selectedItem) {
-      selectedItem = this.state.squareSign;
-      itemsCopy[index] = selectedItem;
-
-      if (this.state.squareSign === 'x') {
-
-        return this.setState({
-          items: itemsCopy,
-          squareSign: 'o'
-        });
-      }
-
-      return this.setState({
-        items: itemsCopy,
-        squareSign: 'x'
-      });
-
-    } else {
-      return;
-    }
+    this.setState(krestiki(this.state, index));
   };
 
   render () {
@@ -51,6 +38,10 @@ class TicTacToe extends React.Component {
               clickHandler={ () => this.updateItem(index)}/>
           ))}
         </div>
+        <button
+          onClick={this.resetGame}>
+          RESET
+        </button>
       </div>
     )
   }
