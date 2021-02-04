@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Calculator from "./parts/Calculator";
 import TicTacToe from "./parts/TicTacToe";
 import Markdown from "./parts/Markdown";
@@ -13,6 +13,9 @@ class App extends Component {
       <div>
         <Router>
           <ul className="nav">
+            <li>
+              <Link to='/'>Main</Link>
+            </li>
             <li>
               <Link to='/calculator'>Calculator</Link>
             </li>
@@ -31,7 +34,10 @@ class App extends Component {
           </ul>
 
           <Switch>
-            <Route exact path='/calculator'>
+            <Route exact path='/'>
+              <h2>MAIN PAGE</h2>
+            </Route>
+            <Route path='/calculator'>
               <Calculator />
             </Route>
             <Route path='/markdown'>
@@ -47,6 +53,7 @@ class App extends Component {
               <Todo />
             </Route>
           </Switch>
+          
         </Router>
       </div>
     )
