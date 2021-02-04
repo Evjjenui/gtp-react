@@ -59,3 +59,25 @@
   font-size: 45px;
   cursor: default;
 }
+
+.nav {
+  display: block;
+  margin: 20px 0;
+
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0 20px;
+
+    a {
+      color: #f5923e;
+      text-decoration: none;
+
+      &:hover {
+        color: #2c2c2c;
+      }
+    }
+  }
+}
