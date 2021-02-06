@@ -7,7 +7,8 @@ module.exports = {
   
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: '[name]_bundle.js'
+    filename: '[name]_bundle.js',
+    publicPath: '/',
   },
 
   module: {
@@ -55,6 +56,7 @@ module.exports = {
 
   // Development server
   devServer: {
+    historyApiFallback: true,
     contentBase: path.resolve(__dirname, 'build'),
     port: 4000,
     writeToDisk: true,

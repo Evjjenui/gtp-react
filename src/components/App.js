@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+
 import Calculator from "./parts/Calculator";
 import TicTacToe from "./parts/TicTacToe";
 import Markdown from "./parts/Markdown";
 import Timer from "./parts/Timer";
 import Todo from "./parts/Todo";
+import Other from "./parts/Other";
 
 
 class App extends Component {
@@ -31,6 +33,9 @@ class App extends Component {
             <li>
               <Link to='/todo'>Todo</Link>
             </li>
+            <li>
+              <Link to='/other'>Other</Link>
+            </li>
           </ul>
 
           <Switch>
@@ -51,6 +56,9 @@ class App extends Component {
             </Route>
             <Route path='/todo'>
               <Todo />
+            </Route>
+            <Route path='/other'>
+              <Other />
             </Route>
           </Switch>
           
