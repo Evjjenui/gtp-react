@@ -1,10 +1,13 @@
 import React from "react";
 import Tabs from "./other_parts/Tabs"
+import ApiExample from "./ApiExample"
 
 class Other extends React.Component {
   constructor(props) {
     super(props);
   }
+
+
 
   render() {
 
@@ -21,7 +24,7 @@ class Other extends React.Component {
             <strong><em>lol</em></strong>
           </div>
           <div title="Fourth tab">
-            <h1><i>lol</i></h1>
+            <ApiExample />
           </div>
         </Tabs>
       </div>
