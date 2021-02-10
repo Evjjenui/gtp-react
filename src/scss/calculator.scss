@@ -107,3 +107,20 @@
     background-color: #f5923e;
   }
 }
+
+.tab-content {
+  padding: 15px;
+  color: #2c2c2c;
+  font-size: 13px;
+  line-height: 22px;
+
+  ul,
+  ol {
+    list-style-position: inside;
+  }
+}
+
+.select-item__highlighted {
+  color: #fff;
+  background-color: #f5923e;
+}

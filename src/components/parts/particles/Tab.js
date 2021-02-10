@@ -5,7 +5,7 @@ class Tab extends React.Component {
     super(props);
   };
 
-  onClick = () => {
+  onClicked = () => {
     const { tabName, onClick } = this.props
     onClick(tabName)
   }
@@ -16,7 +16,7 @@ class Tab extends React.Component {
         tabName,
         activeTab
       },
-      onClick
+      onClicked
     } = this;
 
     let name = 'TabItem';
@@ -28,7 +28,7 @@ class Tab extends React.Component {
     return (
       <li
         className={name}
-        onClick={onClick}>
+        onClick={onClicked}>
         {tabName}
       </li>
     );

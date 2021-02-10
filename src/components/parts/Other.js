@@ -1,6 +1,8 @@
 import React from "react";
 import Tabs from "./other_parts/Tabs"
 import ApiExample from "./ApiExample"
+import Select from "./Select"
+
 
 class Other extends React.Component {
   constructor(props) {
@@ -20,10 +22,10 @@ class Other extends React.Component {
           <div title="Second tab">
             <strong>lol</strong>
           </div>
-          <div title="Third tab">
-            <strong><em>lol</em></strong>
+          <div title="Select exmpl">
+            <Select />
           </div>
-          <div title="Fourth tab">
+          <div title="Api example">
             <ApiExample />
           </div>
         </Tabs>
