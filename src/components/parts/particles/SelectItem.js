@@ -1,11 +1,9 @@
 import React, {useState} from "react";
 
-function SelectItem (props) {
-  const {text, itemChecked} = props;
+function SelectItem ({onClick, text, itemChecked}) {
   let classState = 'select-item';
 
   function onClicked () {
-    const {text, onClick} = props;
     onClick(text);
   }
 
@@ -13,13 +11,14 @@ function SelectItem (props) {
     classState += ' select-item__highlighted';
   }
   
-  
   return (
-    <option
-      className={classState}
-      onClick={onClicked}>
-      {text}
-    </option>
+    <>
+      <option
+        className={classState}
+        onClick={onClicked}>
+        {text}
+      </option>
+    </>
   )
 }
 

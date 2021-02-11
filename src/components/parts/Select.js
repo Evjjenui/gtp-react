@@ -6,6 +6,8 @@ function Select(props) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(null);
   const [itemChecked, setItemChecked] = useState('');
+  
+  let insertText;
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos')
@@ -22,6 +24,18 @@ function Select(props) {
       )
   })
 
+  function onCheck(option) {
+    setItemChecked(option);
+    
+    if (itemChecked) {
+      console.log('here', insertText);
+      console.log(items.filter(item => item.title === itemChecked));
+      insertText = items.filter(item => item.title === itemChecked);
+    } else {
+      return;
+    }
+  }
+
   if(error) {
     return <p>Error: {error.message}</p>
   } else if (!isLoaded) {
@@ -29,18 +43,20 @@ function Select(props) {
   } else {
 
     return (
-      <select>
-        {items.map(item => {
-          return (
-            <SelectItem
-              key = {item.id}
-              text = {item.title}
-              itemChecked = {itemChecked}
-              onClick = {(optionText) => {setItemChecked(optionText)}}
-              />
-          )
-        })}
-      </select>
+      <>
+        <select>
+          {items.map(item => {
+            return (
+              <SelectItem
+                key = {item.id}
+                text = {item.title}
+                itemChecked = {itemChecked}
+                onClick = {setItemChecked}/>
+            )
+          })}
+        </select>
+        <p>here's more info : {}</p>
+      </>
     )
   }
 }

@@ -42,7 +42,6 @@ class ApiExample extends React.Component {
     if (error) {
       return <p>Error: {error.message}</p>
     } else if (!isLoaded) {
-      console.log(items);
       return <p>Loading ...</p>
     } else {
       return (
