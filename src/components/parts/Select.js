@@ -41,7 +41,7 @@ function Select(props) {
             )
           })}
         </select>
-        <p>here's more info : {itemChecked ? items.filter(item => item.title === itemChecked)[0].id : items.[0].id}</p>
+        <p>here's more info : {itemChecked ? items.filter(item => item.title === itemChecked)[0].id : items[0].id}</p>
       </>
     )
   }
