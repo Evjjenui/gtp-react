@@ -2,6 +2,7 @@ import React from "react";
 import Tabs from "./other_parts/Tabs"
 import ApiExample from "./ApiExample"
 import Select from "./Select"
+import Modal from "./Modal"
 
 
 class Other extends React.Component {
@@ -19,8 +20,8 @@ class Other extends React.Component {
           <div title="First tab">
             <em>lol</em>
           </div>
-          <div title="Second tab">
-            <strong>lol</strong>
+          <div title="NE Modal exmpl">
+            <Modal />
           </div>
           <div title="Select exmpl">
             <Select />
