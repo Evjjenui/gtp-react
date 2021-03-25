@@ -1,37 +1,28 @@
 import React from "react";
 
-class Tab extends React.Component {
-  constructor(props) {
-    super(props);
+function Tab(props) {
+  const { 
+    tabName,
+    activeTab,
+  } = props;
+
+  let name = 'TabItem';
+
+  if (activeTab === tabName) {
+    name += ' TabItem-active';
   };
 
-  onClicked = () => {
-    const { tabName, onClick } = this.props
+  function onClicked() {
+    const { tabName, onClick } = props
     onClick(tabName)
   }
 
-  render() {
-    const { 
-      props: {
-        tabName,
-        activeTab
-      },
-      onClicked
-    } = this;
-
-    let name = 'TabItem';
-
-    if (activeTab === tabName) {
-      name += ' TabItem-active';
-    };
-
-    return (
-      <li
-        className={name}
-        onClick={onClicked}>
-        {tabName}
-      </li>
-    );
-  };
+  return (
+    <li
+      className={name}
+      onClick={onClicked}>
+      {tabName}
+    </li>
+  );
 }
 export default Tab;
