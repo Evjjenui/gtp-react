@@ -1,24 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-function FormItem(props) {
-  const [text, setText] = useState('');
+export const FormItem = ({ label, ...rest }) => {
 
-  function changeHandler(e){
-    const { nameValue } = props;
-    nameValue(setText(e.target.value));
-  }
+  function ChangeText(e) {
+    const {onChange} = {...rest};
+    onChange(e.target.value);
+  };
 
   return (
-
     <div className="form-item">
-      <label>{props.label}:</label>
+      <label>{label}:</label>
       <input
         type="text"
-        onChange = {(e) => changeHandler(e)}
-        value={text}
+        onChange={(e) => ChangeText(e)}
         />
     </div>
   )
-}
-
-export default FormItem;
+};
