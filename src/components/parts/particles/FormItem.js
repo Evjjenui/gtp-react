@@ -12,8 +12,9 @@ export const FormItem = ({ label, ...rest }) => {
     <div className="form-item">
       <label>{label}:</label>
       <input
-        type="text"
-        onChange={(e) => ChangeText(e)}
+        type = "text"
+        onChange = {(e) => ChangeText(e)}
+        value = {valueText}
         />
     </div>
   )

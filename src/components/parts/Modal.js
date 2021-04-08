@@ -18,7 +18,7 @@ function Modal() {
     }
     
     setItemsList([...itemsList, newItem]);
-    setValues('');
+    setValues({});
   }
 
   return (
@@ -26,12 +26,15 @@ function Modal() {
       <form onSubmit={(e) => submitHandler(e)}>
         <FormItem
           label='Name'
+          valueText={values.name}
           onChange={(name) => setValues({...values, name})}/>
         <FormItem
           label='Additional info'
+          valueText={values.addInfo}
           onChange={(addInfo) => setValues({...values, addInfo})}/>
         <FormItem
           label='Price'
+          valueText={values.price}
           onChange={(price) => setValues({...values, price})}/>
 
         <button >Add Item</button>
