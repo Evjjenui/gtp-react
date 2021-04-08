@@ -5,7 +5,7 @@ function ModalList(props) {
   return (
     <>
       {props.list.map(item => (
-        <ModalItem itemInfo={item}/>
+        <ModalItem key={item.id} itemInfo={item}/>
       ))}
     </>
   )
