@@ -40,9 +40,9 @@ function Modal() {
         <button >Add Item</button>
       </form>
       
-      {/* <button className="button">
+      <button className="button">
         <strong>Show Modal</strong>
-      </button> */}
+      </button>
 
       <ModalList list={itemsList}/>
     </div>
