@@ -1,22 +1,20 @@
 import React from "react";
 
-function ModalItem (props) {
+function ModalItem ({itemInfo, ...rest}) {
 
-  function ClickHandler(e) {
-    const { onChange } = props;
-    onChange(e);
-
-    e.target.parentNode.remove()
+  function ClickHandler() {
+    const { onChange } = {...rest};
+    onChange();
   }
 
   return (
     <div className="modal-item">
-      <span>Name: {props.itemInfo.name}</span>
-      <span>Additional info: {props.itemInfo.addInfo}</span>
-      <span>Price: {props.itemInfo.price}</span>
+      <span>Name: {itemInfo.name}</span>
+      <span>Additional info: {itemInfo.addInfo}</span>
+      <span>Price: {itemInfo.price}</span>
       <button
         className="delete"
-        onClick={(e) => ClickHandler(e)}
+        onClick={() => ClickHandler()}
         >X</button>
     </div>
   )

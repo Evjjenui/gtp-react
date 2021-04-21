@@ -19,12 +19,11 @@ function Modal() {
     
     setItemsList([...itemsList, newItem]);
     setValues({});
-
-    console.log(itemsList);
   }
   
-  function removeItem() {
-    console.log(itemsList, 'log for Delete');
+  function removeItem(id) {
+    var newList = itemsList.filter(item => item.id !== id);
+    setItemsList(newList)
   }
 
   return (
@@ -46,13 +45,14 @@ function Modal() {
         <button >Add Item</button>
       </form>
       
-      {/* <button className="button">
+      <button className="button">
         <strong>Show Modal</strong>
-      </button> */}
+      </button>
+      
 
       <ModalList
         list={itemsList}
-        onDelete={removeItem()}/>
+        onDelete={(itemId) => removeItem(itemId)}/>
     </div>
   )
 }

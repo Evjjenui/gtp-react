@@ -3,9 +3,9 @@ import ModalItem from '../other_parts/ModalItem';
 
 function ModalList(props) {
 
-  function getItem() {
+  function getItem(itemId) {
     const { onDelete } = props;
-    onDelete();
+    onDelete(itemId);
   }
 
   return (
@@ -14,7 +14,7 @@ function ModalList(props) {
         <ModalItem
           key={item.id}
           itemInfo={item}
-          onChange={() => getItem()}
+          onChange={() => getItem(item.id)}
           />
       ))}
     </>
