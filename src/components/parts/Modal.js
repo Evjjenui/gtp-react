@@ -19,6 +19,12 @@ function Modal() {
     
     setItemsList([...itemsList, newItem]);
     setValues({});
+
+    setTimeout(function(){console.log(itemsList)}, 0);
+  }
+
+  function removeItem() {
+
   }
 
   return (
@@ -26,25 +32,27 @@ function Modal() {
       <form onSubmit={(e) => submitHandler(e)}>
         <FormItem
           label='Name'
-          valueText={values.name}
+          valueText={values.name || ''}
           onChange={(name) => setValues({...values, name})}/>
         <FormItem
           label='Additional info'
-          valueText={values.addInfo}
+          valueText={values.addInfo || ''}
           onChange={(addInfo) => setValues({...values, addInfo})}/>
         <FormItem
           label='Price'
-          valueText={values.price}
+          valueText={values.price || ''}
           onChange={(price) => setValues({...values, price})}/>
 
         <button >Add Item</button>
       </form>
       
-      <button className="button">
+      {/* <button className="button">
         <strong>Show Modal</strong>
-      </button>
+      </button> */}
 
-      <ModalList list={itemsList}/>
+      <ModalList
+        list={itemsList}
+        onDelete={removeItem()}/>
     </div>
   )
 }

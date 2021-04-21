@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const FormItem = ({ label, ...rest }) => {
-  const {valueText} ={...rest}
+  const {valueText} = {...rest}
 
   function ChangeText(e) {
     const {onChange} = {...rest};
