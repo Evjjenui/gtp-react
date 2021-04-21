@@ -20,11 +20,11 @@ function Modal() {
     setItemsList([...itemsList, newItem]);
     setValues({});
 
-    setTimeout(function(){console.log(itemsList)}, 0);
+    console.log(itemsList);
   }
-
+  
   function removeItem() {
-
+    console.log(itemsList, 'log for Delete');
   }
 
   return (

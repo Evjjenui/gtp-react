@@ -2,10 +2,12 @@ import React from "react";
 
 function ModalItem (props) {
 
-  // function ClickHandler(e) {
-  //   const { onChange } = props;
-  //   onChange(e);
-  // }
+  function ClickHandler(e) {
+    const { onChange } = props;
+    onChange(e);
+
+    e.target.parentNode.remove()
+  }
 
   return (
     <div className="modal-item">
@@ -14,7 +16,7 @@ function ModalItem (props) {
       <span>Price: {props.itemInfo.price}</span>
       <button
         className="delete"
-        onClick={(e) => e.target.parentNode.remove()}
+        onClick={(e) => ClickHandler(e)}
         >X</button>
     </div>
   )
