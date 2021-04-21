@@ -8,19 +8,21 @@ function Select(props) {
   const [itemChecked, setItemChecked] = useState();
   
   useEffect(() => {
+    
     fetch('https://jsonplaceholder.typicode.com/todos')
-      .then(response => response.json())
-      .then(
-        result => {
-          setItems(result)
-          setIsLoaded(true)
-        },
-        error => {
-          setError(error)
-          setIsLoaded(true)
-        }
-      )
-  })
+    .then(response => response.json())
+    .then(
+      result => {
+        setItems(result)
+        setIsLoaded(true)
+      },
+      error => {
+        setError(error)
+        setIsLoaded(true)
+        error
+      })
+
+  }, [])
 
   if(error) {
     return <p>Error: {error.message}</p>

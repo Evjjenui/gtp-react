@@ -22,7 +22,7 @@ function Modal() {
   }
   
   function removeItem(id) {
-    var newList = itemsList.filter(item => item.id !== id);
+    let newList = itemsList.filter(item => item.id !== id);
     setItemsList(newList)
   }
 
@@ -45,10 +45,9 @@ function Modal() {
         <button >Add Item</button>
       </form>
       
-      <button className="button">
+      {/* <button className="button">
         <strong>Show Modal</strong>
-      </button>
-      
+      </button> */}
 
       <ModalList
         list={itemsList}
