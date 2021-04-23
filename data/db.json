@@ -1,0 +1,23 @@
+{ 
+  "blogs": [
+
+    {
+      "title": "React hooks",
+      "description": "Here, useState is a Hook (we’ll talk about what this means in a moment). We call it inside a function component to add some local state to it. React will preserve this state between re-renders. useState returns a pair: the current state value and a function that lets you update it. You can call this function from an event handler or somewhere else. It’s similar to this.setState in a class, except it doesn’t merge the old and new state together. (We’ll show an example comparing useState to this.state in Using the State Hook.)", 
+      "author": "evjjenui",
+      "data": "25/03/2021",
+      "id": 1},
+    {
+      "title": "Personal theme",
+      "description": "Here, useState is a Hook (we’ll talk about what this means in a moment). We call it inside a function component to add some local state to it. React will preserve this state between re-renders. useState returns a pair: the current state value and a function that lets you update it. You can call this function from an event handler or somewhere else. It’s similar to this.setState in a class, except it doesn’t merge the old and new state together. (We’ll show an example comparing useState to this.state in Using the State Hook.)",
+      "author": "person_1",
+      "data": "21/03/2031",
+      "id": 2},
+    {
+      "title": "Blogger theme",
+      "description": "Here, useState is a Hook (we’ll talk about what this means in a moment). We call it inside a function component to add some local state to it. React will preserve this state between re-renders. useState returns a pair: the current state value and a function that lets you update it. You can call this function from an event handler or somewhere else. It’s similar to this.setState in a class, except it doesn’t merge the old and new state together. (We’ll show an example comparing useState to this.state in Using the State Hook.)",
+      "author": "blogger_1",
+      "data": "25/03/2021",
+      "id": 3}
+  ]
+}

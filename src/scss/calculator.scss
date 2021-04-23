@@ -181,3 +181,32 @@
     text-align: left;
   }
 }
+
+h1 {
+  margin: 20px;
+}
+
+.blog {
+
+  &-list {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: $color-end;
+  }
+
+  &-item {
+    margin: 15px 20px 15px 0;
+    width: 100%;
+    max-width: calc(33.333% - 20px);
+    padding: 12px;
+    @include border-radius(8px);
+    @include box-shadow(0 0 5px 1px rgba(#000, .3));
+    cursor: pointer;
+
+    p {
+      margin: 15px 0;
+    }
+  }
+}

@@ -7,6 +7,7 @@ import Markdown from "./parts/Markdown";
 import Timer from "./parts/Timer";
 import Todo from "./parts/Todo";
 import Other from "./parts/Other";
+import Blog from "./parts/Blog";
 
 
 class App extends Component {
@@ -36,6 +37,9 @@ class App extends Component {
             <li>
               <Link to='/other'>Other</Link>
             </li>
+            <li>
+              <Link to='/blog'>Blog</Link>
+            </li>
           </ul>
 
           <Switch>
@@ -59,6 +63,9 @@ class App extends Component {
             </Route>
             <Route path='/other'>
               <Other />
+            </Route>
+            <Route path='/blog'>
+              <Blog />
             </Route>
           </Switch>
           

@@ -1,6 +1,6 @@
 import React from "react";
 
-function ModalItem ({itemInfo, ...rest}) {
+const ModalItem = ({itemInfo, ...rest}) => {
 
   function ClickHandler() {
     const { onChange } = {...rest};
@@ -14,10 +14,10 @@ function ModalItem ({itemInfo, ...rest}) {
       <span>Price: {itemInfo.price}</span>
       <button
         className="delete"
-        onClick={() => ClickHandler()}
+        onClick={ClickHandler}
         >X</button>
     </div>
-  )
+  );
 }
 
 export default ModalItem;

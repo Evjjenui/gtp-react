@@ -13,7 +13,7 @@ export const FormItem = ({ label, ...rest }) => {
       <label>{label}:</label>
       <input
         type = "text"
-        onChange = {(e) => ChangeText(e)}
+        onChange = {ChangeText}
         value = {valueText}
         />
     </div>

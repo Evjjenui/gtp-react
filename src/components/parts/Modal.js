@@ -54,6 +54,6 @@ function Modal() {
         onDelete={(itemId) => removeItem(itemId)}/>
     </div>
   )
-}
+}``
 
 export default Modal;
