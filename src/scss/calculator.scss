@@ -223,3 +223,26 @@ h1 {
     line-height: 24px;
   }
 }
+
+.blog {
+
+  &-form {
+    max-width: 50%;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  &-head {
+    display: flex;
+  }
+
+  &-links {
+    margin-left: auto;
+
+    a {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 10px;
+    }
+  }
+}
