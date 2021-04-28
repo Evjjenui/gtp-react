@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 import Calculator from "./parts/Calculator";
 import TicTacToe from "./parts/TicTacToe";
@@ -8,6 +8,7 @@ import Timer from "./parts/Timer";
 import Todo from "./parts/Todo";
 import Other from "./parts/Other";
 import Blog from "./parts/Blog";
+import Navigation from "./parts/particles/Navigation";
 
 
 class App extends Component {
@@ -15,33 +16,8 @@ class App extends Component {
     return (
       <div>
         <Router>
-          <ul className="nav">
-            <li>
-              <Link to='/'>Main</Link>
-            </li>
-            <li>
-              <Link to='/calculator'>Calculator</Link>
-            </li>
-            <li>
-              <Link to='/markdown'>Markdown</Link>
-            </li>
-            <li>
-              <Link to='/krestiki'>Krestiki</Link>
-            </li>
-            <li>
-              <Link to='/timer'>Timer</Link>
-            </li>
-            <li>
-              <Link to='/todo'>Todo</Link>
-            </li>
-            <li>
-              <Link to='/other'>Other</Link>
-            </li>
-            <li>
-              <Link to='/blog'>Blog</Link>
-            </li>
-          </ul>
-
+          <Navigation />
+          
           <Switch>
             <Route exact path='/'>
               <h2>MAIN PAGE</h2>

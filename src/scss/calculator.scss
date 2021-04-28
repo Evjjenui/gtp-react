@@ -210,3 +210,16 @@ h1 {
     }
   }
 }
+
+.info-text {
+  padding: 10px 20px;
+
+  &.error-block {
+    color: #f00;
+  }
+
+  &.loading {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
