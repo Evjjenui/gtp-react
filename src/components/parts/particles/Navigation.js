@@ -1,32 +1,32 @@
 import React from "react";
-import { Link} from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 const Navigation = () => {
   return ( 
     <ul className="nav">
       <li>
-        <Link to='/'>Main</Link>
+        <NavLink exact to='/'>Main</NavLink>
       </li>
       <li>
-        <Link to='/calculator'>Calculator</Link>
+        <NavLink activeClassName="active" to='/calculator'>Calculator</NavLink>
       </li>
       <li>
-        <Link to='/markdown'>Markdown</Link>
+        <NavLink activeClassName="active" to='/markdown'>Markdown</NavLink>
       </li>
       <li>
-        <Link to='/krestiki'>Krestiki</Link>
+        <NavLink activeClassName="active" to='/krestiki'>Krestiki</NavLink>
       </li>
       <li>
-        <Link to='/timer'>Timer</Link>
+        <NavLink activeClassName="active" to='/timer'>Timer</NavLink>
       </li>
       <li>
-        <Link to='/todo'>Todo</Link>
+        <NavLink activeClassName="active" to='/todo'>Todo</NavLink>
       </li>
       <li>
-        <Link to='/other'>Other</Link>
+        <NavLink activeClassName="active" to='/other'>Other</NavLink>
       </li>
       <li>
-        <Link to='/blog'>Blog</Link>
+        <NavLink activeClassName="active" to='/blog'>Blog</NavLink>
       </li>
     </ul>
    );

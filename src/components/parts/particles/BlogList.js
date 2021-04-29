@@ -3,7 +3,7 @@ import { Link} from "react-router-dom";
 import useFetch from "../useFetch"
 
 
-const BlogList = ({ blogList }) => {
+const BlogList = () => {
   const { data: blogs, pending, errorInfo} = useFetch('http://localhost:8000/blogs');
   
   return ( 
@@ -16,7 +16,7 @@ const BlogList = ({ blogList }) => {
             <Link to={`/blog/${item.id}`}>
               <h2>{item.title}</h2>
               <p>{item.author}</p>
-              <i>{item.data}</i>
+              <i>{item.date}</i>
             </Link>
           </div>
         ))}

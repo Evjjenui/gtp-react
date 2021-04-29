@@ -4,7 +4,6 @@ const useFetch = (url) => {
   const [data, setdata] = useState([]);
   const [pending, setPending] = useState(true);
   const [errorInfo, setErrorInfo] = useState('');
-  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const abortCont = new AbortController();
@@ -14,7 +13,6 @@ const useFetch = (url) => {
         if (!res.ok) {
           throw Error('Could not fetch the data!');
         }
-
         return res.json()
       })
       .then(data => {

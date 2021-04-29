@@ -2,9 +2,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 
-const BlogDetails = () => {
-  const { blogId } = useParams();
-  const { data: blog, pending, errorInfo} = useFetch('http://localhost:8000/blogs/' + blogId);
+const BlogPost = () => {
+  const { slug } = useParams();
+  const { data: blog, pending, errorInfo} = useFetch('http://localhost:8000/blogs/' + slug);
 
   return ( 
     
@@ -16,9 +16,10 @@ const BlogDetails = () => {
           <h3>{ blog.title }</h3>
           <i>Author: { blog.author }</i>
           <p>{ blog.details }</p>
+          <i>{ blog.date }</i>
         </article>}
     </div>
   );
 }
  
-export default BlogDetails;
+export default BlogPost;
