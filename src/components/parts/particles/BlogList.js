@@ -5,6 +5,15 @@ import useFetch from "../useFetch"
 
 const BlogList = () => {
   const { data: blogs, pending, errorInfo} = useFetch('http://localhost:8000/blogs');
+
+  const handleDelete = (e, id) => {
+    
+    fetch(('http://localhost:8000/blogs/' + id), {
+      method: 'DELETE'
+    });
+
+    e.target.parentElement.remove();
+  };
   
   return ( 
     <>
@@ -18,6 +27,7 @@ const BlogList = () => {
               <p>{item.author}</p>
               <i>{item.date}</i>
             </Link>
+            <button onClick={(e) => handleDelete(e, item.id)}>Delete post</button>
           </div>
         ))}
       </div>

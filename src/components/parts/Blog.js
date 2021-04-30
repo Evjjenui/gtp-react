@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch} from "react-router-dom";
-import BlogCreate from "./BlogCreate";
 import BlogList from "./particles/BlogList"
 import BlogPost from "./BlogPost"
+import PostCreate from "./PostCreate";
 
 const Blog = () => {
   let { path, url } = useRouteMatch();
@@ -23,7 +23,7 @@ const Blog = () => {
             <BlogList />
           </Route>
           <Route path={`${path}/blog-create`}>
-            <BlogCreate />
+            <PostCreate />
           </Route>
           <Route path={`${path}/:slug`}>
             <BlogPost />

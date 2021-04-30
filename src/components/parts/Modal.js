@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import ModalList from './particles/ModalList';
-import {FormItem} from './particles/FormItem';
+import { FormInput } from './particles/FormInput';
 
 function Modal() {
   const [itemsList, setItemsList] = useState([]);
@@ -29,15 +29,15 @@ function Modal() {
   return (
     <div className="modal-block">
       <form onSubmit={(e) => submitHandler(e)}>
-        <FormItem
+        <FormInput
           label='Name'
           valueText={values.name || ''}
           onChange={(name) => setValues({...values, name})}/>
-        <FormItem
+        <FormInput
           label='Additional info'
           valueText={values.addInfo || ''}
           onChange={(addInfo) => setValues({...values, addInfo})}/>
-        <FormItem
+        <FormInput
           label='Price'
           valueText={values.price || ''}
           onChange={(price) => setValues({...values, price})}/>

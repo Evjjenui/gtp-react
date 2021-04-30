@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const FormItem = ({ label, ...rest }) => {
+export const FormTextarea = ({ label, ...rest }) => {
   const {valueText} = {...rest}
 
   function ChangeText(e) {
@@ -11,11 +11,11 @@ export const FormItem = ({ label, ...rest }) => {
   return (
     <div className="form-item">
       <label>{label}:</label>
-      <input
-        type = "text"
+      <textarea 
         onChange = {ChangeText}
         value = {valueText}
-        />
+        required>
+      </textarea>
     </div>
   )
 };

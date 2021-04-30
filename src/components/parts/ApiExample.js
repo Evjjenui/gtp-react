@@ -15,10 +15,9 @@ class ApiExample extends React.Component {
     fetch("https://jsonplaceholder.typicode.com/todos")
       .then(response => response.json())
       .then(
-        (result) => {
-          console.log(result);
+        (res) => {
           this.setState({
-            items: result,
+            items: res,
             isLoaded: true
           })
         },
