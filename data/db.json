@@ -27,6 +27,21 @@
       "details": " This site has 3 pages, all of which are rendered\n// dynamically in the browser (not server rendered).\n//\n// Although the page does not ever refresh, notice how\n// React Router keeps the URL up to date as you navigate\n// through the site. This preserves the browser history,\n// making sure things like the back button and bookmarks\n// work properly.\n",
       "date": "2021-04-30",
       "id": 11
+    },
+    {
+      "title": "new TITTLE",
+      "author": "noT ME",
+      "details": "some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...",
+      "date": "2021-04-30",
+      "id": 12
+    }
+  ],
+  "modal_items": [
+    {
+      "name": "asjdna dadm 19dj 01",
+      "addInfo": "asdk 1od",
+      "price": "1 e12e1231",
+      "id": 1
     }
   ]
 }

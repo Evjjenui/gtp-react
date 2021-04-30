@@ -1,16 +1,20 @@
 import React from 'react';
 import ModalItem from '../other_parts/ModalItem';
+import useFetch from "../useFetch";
 
-function ModalList(props) {
+
+const ModalList= ({ onDelete }) => {
+  const { data: list, pending, errorInfo} = useFetch('http://localhost:8000/modal_items');
 
   function getItem(itemId) {
-    const { onDelete } = props;
     onDelete(itemId);
   }
 
   return (
     <>
-      {props.list.map(item => (
+      { errorInfo && <div className="info-text error-block">{errorInfo}</div> }
+      { pending && <div className="info-text loading">Loading ...</div>}
+      {list.map(item => (
         <ModalItem
           key={item.id}
           itemInfo={item}

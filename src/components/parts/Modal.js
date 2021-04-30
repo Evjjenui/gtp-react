@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 import ModalList from './particles/ModalList';
 import { FormInput } from './particles/FormInput';
 
-function Modal() {
-  const [itemsList, setItemsList] = useState([]);
-  const [values, setValues] = useState({});
 
+function Modal() {
+  // const [itemsList, setItemsList] = useState([]);
+  const [values, setValues] = useState({});
+  
   function submitHandler(e) {
     e.preventDefault();
 
@@ -14,16 +15,26 @@ function Modal() {
       name: values.name,
       addInfo: values.addInfo,
       price: values.price,
-      id: Date.now()
     }
     
-    setItemsList([...itemsList, newItem]);
+    fetch(('http://localhost:8000/modal_items'), {
+      method: 'POST',
+      headers:  {'Content-Type': 'application/json' },
+      body: JSON.stringify(newItem)
+    }).then(() => {
+      console.log('item added');
+    })
+    
+    // setItemsList([...itemsList, newItem]);
     setValues({});
-  }
-  
+  };
+
   function removeItem(id) {
-    let newList = itemsList.filter(item => item.id !== id);
-    setItemsList(newList)
+    // let newList = itemsList.filter(item => item.id !== id);
+    // setItemsList(newList)
+    fetch(('http://localhost:8000/modal_items/' + id), {
+      method: 'DELETE'
+    });
   }
 
   return (
@@ -42,7 +53,7 @@ function Modal() {
           valueText={values.price || ''}
           onChange={(price) => setValues({...values, price})}/>
 
-        <button >Add Item</button>
+        <button>Add Item</button>
       </form>
       
       {/* <button className="button">
@@ -50,7 +61,7 @@ function Modal() {
       </button> */}
 
       <ModalList
-        list={itemsList}
+        // list={itemsList}
         onDelete={(itemId) => removeItem(itemId)}/>
     </div>
   )
