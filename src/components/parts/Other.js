@@ -10,11 +10,11 @@ const Other = () => {
   return (
     <div>
       <Tabs>
-        <div title="First tab">
-          <em>lol</em>
-        </div>
         <div title="NE Modal exmpl">
           <Modal />
+        </div>
+        <div title="NE First tab">
+          <em>lol</em>
         </div>
         <div title="Select exmpl">
           <Select />

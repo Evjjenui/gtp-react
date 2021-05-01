@@ -38,10 +38,25 @@
   ],
   "modal_items": [
     {
-      "name": "asjdna dadm 19dj 01",
-      "addInfo": "asdk 1od",
-      "price": "1 e12e1231",
-      "id": 1
+      "name": "12",
+      "addInfo": "12",
+      "price": "12",
+      "date": "2021-05-01",
+      "id": 1619855412944
+    },
+    {
+      "name": "32",
+      "addInfo": "32",
+      "price": "23",
+      "date": "2021-05-01",
+      "id": 1619855417690
+    },
+    {
+      "name": "434",
+      "addInfo": "54",
+      "price": "54",
+      "date": "2021-05-01",
+      "id": 1619855421141
     }
   ]
 }
