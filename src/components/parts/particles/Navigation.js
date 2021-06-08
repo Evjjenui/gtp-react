@@ -5,28 +5,31 @@ const Navigation = () => {
   return ( 
     <ul className="nav">
       <li>
-        <NavLink exact to='/'>Main</NavLink>
+        <NavLink activeClassName="active" exact to='/'>Main</NavLink>
       </li>
       <li>
-        <NavLink activeClassName="active" to='/calculator'>Calculator</NavLink>
+        <NavLink to='/calculator'>Calculator</NavLink>
       </li>
       <li>
-        <NavLink activeClassName="active" to='/markdown'>Markdown</NavLink>
+        <NavLink to='/markdown'>Markdown</NavLink>
       </li>
       <li>
-        <NavLink activeClassName="active" to='/krestiki'>Krestiki</NavLink>
+        <NavLink to='/krestiki'>Krestiki</NavLink>
       </li>
       <li>
-        <NavLink activeClassName="active" to='/timer'>Timer</NavLink>
+        <NavLink to='/timer'>Timer</NavLink>
       </li>
       <li>
-        <NavLink activeClassName="active" to='/todo'>Todo</NavLink>
+        <NavLink to='/todo'>Todo</NavLink>
       </li>
       <li>
-        <NavLink activeClassName="active" to='/other'>Other</NavLink>
+        <NavLink to='/other'>Other</NavLink>
       </li>
       <li>
-        <NavLink activeClassName="active" to='/blog'>Blog</NavLink>
+        <NavLink to='/blog'>Blog</NavLink>
+      </li>
+      <li>
+        <NavLink to='/task-planner'>Task planner</NavLink>
       </li>
     </ul>
    );

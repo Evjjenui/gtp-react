@@ -34,6 +34,13 @@
       "details": "some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...some text here ...\nsome text here ...",
       "date": "2021-04-30",
       "id": 12
+    },
+    {
+      "title": "1234r",
+      "author": "12e3r",
+      "details": "f2ef2gf211",
+      "date": "2021-05-25",
+      "id": 13
     }
   ],
   "modal_items": [
@@ -58,5 +65,6 @@
       "date": "2021-05-01",
       "id": 1619855421141
     }
-  ]
+  ],
+  "task_planner": []
 }

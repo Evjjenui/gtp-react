@@ -6,6 +6,7 @@ body {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .calculator {
@@ -148,7 +149,7 @@ body {
     margin-right: 10px;
     font-size: 14px;
   }
-  
+
   input {
     @include border-radius(4px);
     @include box-shadow(none);
@@ -160,7 +161,7 @@ body {
     background-color: #fff;
     font-size: 13px;
   }
-  
+
   textarea {
     display: block;
     height: 100px;
@@ -224,7 +225,6 @@ h1 {
 }
 
 .blog {
-
   &-list {
     margin: 20px;
     display: flex;
@@ -237,12 +237,12 @@ h1 {
     width: 100%;
     max-width: calc(33.333% - 20px);
     cursor: pointer;
-    @include transition(ease .25s box-shadow);
+    @include transition(ease 0.25s box-shadow);
     @include border-radius(8px);
-    @include box-shadow(0 0 5px 1px rgba(#000, .1));
+    @include box-shadow(0 0 5px 1px rgba(#000, 0.1));
 
     &:hover {
-      @include box-shadow(0 0 5px 1px rgba(#000, .35));
+      @include box-shadow(0 0 5px 1px rgba(#000, 0.35));
     }
 
     button {
@@ -257,7 +257,7 @@ h1 {
       font-weight: 500;
       color: #bd072f;
       @include border-radius(5px);
-      @include transition(.25s linear all);
+      @include transition(0.25s linear all);
       cursor: pointer;
 
       &:hover {
@@ -265,7 +265,7 @@ h1 {
         color: #fff;
       }
     }
-    
+
     a {
       display: block;
       padding: 12px;
@@ -309,11 +309,11 @@ h1 {
       margin: 0 10px;
       padding: 7px 12px;
       @include border-radius(5px);
-      border: 1px solid #00ce9a;
+      border: 1px solid hsl(165, 100%, 40%);
       text-decoration: none;
       font-weight: 500;
       color: #00ce9a;
-      @include transition(.25s linear all);
+      @include transition(0.25s linear all);
 
       &:hover {
         background-color: #00ce9a;
@@ -322,3 +322,50 @@ h1 {
     }
   }
 }
+
+// TASK PLANNER
+.task-planner {
+  padding: 20px;
+  display: grid;
+
+  &_item {
+    overflow: hidden;
+    padding: 0 0 10px;
+    border: 1px solid #36747c;
+    min-height: 80px;
+    max-width: 25%;
+    @include border-radius(4px);
+    @include box-shadow(2px 2px 6px 0 rgba(#36747c, 0.25));
+
+    button {
+      opacity: 0;
+      pointer-events: none;
+      border: none;
+      background: none;
+      @include transition(opacity ease 0.25s);
+      margin-left: auto;
+      cursor: pointer;
+    }
+
+    svg {
+      width: 11px;
+      fill: #00cc99;
+    }
+
+    &:hover {
+      button {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    &_top-bar {
+      padding: 0 6px;
+      height: 22px;
+      background-color: #36747c;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+// END TASK PLANNER

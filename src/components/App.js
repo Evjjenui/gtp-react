@@ -8,6 +8,7 @@ import Timer from "./parts/Timer";
 import Todo from "./parts/Todo";
 import Other from "./parts/Other";
 import Blog from "./parts/Blog";
+import TaskPlanner from "./parts/TaskPlanner";
 import Navigation from "./parts/particles/Navigation";
 
 
@@ -42,6 +43,9 @@ class App extends Component {
             </Route>
             <Route path='/blog'>
               <Blog />
+            </Route>
+            <Route path='/task-planner'>
+              <TaskPlanner />
             </Route>
           </Switch>
           
