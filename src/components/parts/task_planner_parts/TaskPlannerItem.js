@@ -27,7 +27,7 @@ const TaskPlannerItem = () => {
 
         <ModalAdd
           isOpen={open}
-          onSubmit={ submitHandler }
+          handleSubmit={ submitHandler }
           onClose = {() => setOpen(false)}
         />
       </div>
