@@ -453,4 +453,21 @@ h1 {
     }
   }
 }
+
+.task {
+  &-list {
+    overflow: scroll;
+    max-height: 85%;
+  }
+
+  &-text {
+    padding: 0.25em;
+    margin: 0.25em;
+    font-size: 0.75em;
+    border-radius: 4px;
+    background-color: hsl(0, 0%, 13%);
+    color: hsl(0, 0%, 95%);
+    line-height: 1.5em;
+  }
+}
 // END TASK PLANNER
