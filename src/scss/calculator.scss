@@ -342,23 +342,13 @@ h1 {
     @include border-radius(4px);
     @include box-shadow(2px 2px 6px 0 hsl(187, 39%, 35%, 0.25));
 
-    button {
-      opacity: 0;
-      pointer-events: none;
-      border: none;
-      background: none;
-      @include transition(opacity ease 0.25s);
-      margin-left: auto;
-      cursor: pointer;
-    }
-
     svg {
       width: 11px;
       fill: #00cc99;
     }
 
     &:hover {
-      button {
+      .task-planner_item_top-bar button {
         opacity: 1;
         pointer-events: auto;
       }
@@ -370,6 +360,16 @@ h1 {
       background-color: hsl(187, 39%, 35%);
       display: flex;
       align-items: center;
+
+      button {
+        opacity: 0;
+        pointer-events: none;
+        border: none;
+        background: none;
+        @include transition(opacity ease 0.25s);
+        margin-left: auto;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -461,13 +461,31 @@ h1 {
   }
 
   &-text {
-    padding: 0.25em;
+    padding: 0.4em;
     margin: 0.25em;
     font-size: 0.75em;
     border-radius: 4px;
     background-color: hsl(0, 0%, 13%);
     color: hsl(0, 0%, 95%);
     line-height: 1.5em;
+    padding-right: 25px;
+    position: relative;
+
+    button {
+      border: none;
+      background: none;
+      position: absolute;
+      right: 0.4em;
+      top: 0.4em;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    svg {
+      stroke: hsl(165, 100%, 40%);
+      width: 15px;
+      height: 15px;
+    }
   }
 }
 // END TASK PLANNER

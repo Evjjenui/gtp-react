@@ -7,13 +7,17 @@ const TaskPlannerItem = () => {
   const [taskItems, setTaskItems] = useState([]);
   // const [taskValue, setTaskValue] = useState('');
 
-  function submitHandler(e) {
+  const submitHandler = (e) => {
     e.preventDefault();
     const targetValue = e.target.querySelector('textarea').value;
     
     setOpen(false);
     setTaskItems([...taskItems, targetValue]);
   }
+  
+  // const taskEditFunc = (taskText) => {
+  //   console.log('try to edit me', taskText);
+  // }
 
   return (
     <div className="task-planner_item">
@@ -26,6 +30,7 @@ const TaskPlannerItem = () => {
         {taskItems.map((item, id) => {
           return (
             <Task
+              onEdit= { (e) => console.log(e.target.closest('button').nextElementSibling.innerHTML) }
               key={ id }
               taskText={ item }/>
           )
