@@ -94,6 +94,7 @@ body {
     }
   }
 }
+// TABS
 .Tabs {
   margin: 20px;
 }
@@ -131,6 +132,7 @@ body {
     list-style-position: inside;
   }
 }
+// TABS end
 
 .select-item__highlighted {
   color: #fff;
@@ -148,7 +150,7 @@ body {
     margin-right: 10px;
     font-size: 14px;
   }
-  
+
   input {
     @include border-radius(4px);
     @include box-shadow(none);
@@ -160,7 +162,7 @@ body {
     background-color: #fff;
     font-size: 13px;
   }
-  
+
   textarea {
     display: block;
     height: 100px;
@@ -222,9 +224,8 @@ h1 {
     line-height: 24px;
   }
 }
-
+// Blog
 .blog {
-
   &-list {
     margin: 20px;
     display: flex;
@@ -237,12 +238,12 @@ h1 {
     width: 100%;
     max-width: calc(33.333% - 20px);
     cursor: pointer;
-    @include transition(ease .25s box-shadow);
+    @include transition(ease 0.25s box-shadow);
     @include border-radius(8px);
-    @include box-shadow(0 0 5px 1px rgba(#000, .1));
+    @include box-shadow(0 0 5px 1px rgba(#000, 0.1));
 
     &:hover {
-      @include box-shadow(0 0 5px 1px rgba(#000, .35));
+      @include box-shadow(0 0 5px 1px rgba(#000, 0.35));
     }
 
     button {
@@ -257,7 +258,7 @@ h1 {
       font-weight: 500;
       color: #bd072f;
       @include border-radius(5px);
-      @include transition(.25s linear all);
+      @include transition(0.25s linear all);
       cursor: pointer;
 
       &:hover {
@@ -265,7 +266,7 @@ h1 {
         color: #fff;
       }
     }
-    
+
     a {
       display: block;
       padding: 12px;
@@ -313,7 +314,7 @@ h1 {
       text-decoration: none;
       font-weight: 500;
       color: #00ce9a;
-      @include transition(.25s linear all);
+      @include transition(0.25s linear all);
 
       &:hover {
         background-color: #00ce9a;
@@ -322,3 +323,4 @@ h1 {
     }
   }
 }
+// Blog end

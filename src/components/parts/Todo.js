@@ -28,7 +28,7 @@ function Todo() {
           onChange = {(e) => setText(e.target.value)}
           value = {text}
         />
-        <button>Добавить</button>
+        <button>Add</button>
       </form>
         <TodoList list={items}/>
     </div>

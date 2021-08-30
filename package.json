@@ -4,6 +4,7 @@
     "watch": "NODE_ENV=development webpack serve",
     "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
     "build": "NODE_ENV=production webpack"
+
   },
   "dependencies": {
     "@babel/core": "^7.12.10",
@@ -28,6 +29,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "devDependencies": {
+    "boxicons": "^2.0.9",
     "file-loader": "^6.2.0"
   }
 }
