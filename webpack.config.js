@@ -58,9 +58,9 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, 'build'),
-    port: 4000,
     writeToDisk: true,
-    hot: true
+    hot: true,
+    port: 4000
   },
 
   mode: process.env.NODE_ENV || 'development'

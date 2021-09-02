@@ -8,8 +8,7 @@ const Blog = () => {
   let { path, url } = useRouteMatch();
   
   return ( 
-
-    <div>
+    <>
       <Router>
         <div className="blog-head">
           <h1>Blog</h1>
@@ -30,7 +29,7 @@ const Blog = () => {
           </Route>
         </Switch>
       </Router>
-    </div>
+    </>
   );
 }
  

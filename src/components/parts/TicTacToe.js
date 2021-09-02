@@ -64,7 +64,7 @@ class TicTacToe extends React.Component {
     
     return (
 
-      <div>
+      <>
         <div className='ticGrid'>
           {this.state.items.map((item, index) => (
             <TicItem
@@ -73,11 +73,13 @@ class TicTacToe extends React.Component {
               clickHandler={ () => this.updateItem(nextSign, index)}/>
           ))}
         </div>
-        <button
-          onClick={this.resetGame}>
-          RESET
-        </button>
-      </div>
+        <div className="form-item">
+          <button
+            onClick={this.resetGame}>
+            RESET
+          </button>
+        </div>
+      </>
     )
   }
 }

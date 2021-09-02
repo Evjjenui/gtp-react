@@ -15,34 +15,50 @@ import Navigation from "./parts/particles/Navigation";
 class App extends Component {
   render() {
     return (
-      <div>
+      <>
         <Router>
           <Navigation />
           
           <Switch>
             <Route exact path='/'>
-              <h2>MAIN PAGE</h2>
+              <div className="container">
+                <h2>MAIN PAGE</h2>
+              </div>
             </Route>
             <Route path='/calculator'>
-              <Calculator />
+              <div className="container">
+                <Calculator />
+              </div>
             </Route>
-            <Route path='/markdown'>
-              <Markdown />
-            </Route>
+            {/* <Route path='/markdown'>
+              <div className="container">
+                <Markdown />
+              </div>
+            </Route> */}
             <Route path='/krestiki'>
-              <TicTacToe />
+              <div className="container">
+                <TicTacToe />
+              </div>
             </Route>
             <Route path='/timer'>
-              <Timer />
+              <div className="container">
+                <Timer />
+              </div>
             </Route>
             <Route path='/todo'>
-              <Todo />
+              <div className="container">
+                <Todo />
+              </div>
             </Route>
             <Route path='/other'>
-              <Other />
+              <div className="container">
+                <Other />
+              </div>
             </Route>
             <Route path='/blog'>
-              <Blog />
+              <div className="container">
+                <Blog />
+              </div>
             </Route>
             <Route path='/task-planner'>
               <TaskPlanner />
@@ -50,7 +66,7 @@ class App extends Component {
           </Switch>
           
         </Router>
-      </div>
+      </>
     )
   }
 };

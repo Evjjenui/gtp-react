@@ -52,7 +52,7 @@ function Modal() {
       headers:  {'Content-Type': 'application/json' },
       body: JSON.stringify(newItem)
     }).then(() => {
-      console.log('item added');
+      // console.log('item added');
     })
     
     setItemsList([...itemsList, newItem]);

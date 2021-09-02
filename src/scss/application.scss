@@ -1,9 +1,8 @@
 @import 'mixins/main';
 
-// @import "base/fonts";
 @import 'base/reset';
 
-// @import "desktop/main";
-// @import "tablet/main";
-// @import "mobile/main";
-@import './calculator';
+@import './style';
+@import './blog';
+@import './navigation';
+@import './task_planner';

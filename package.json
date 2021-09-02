@@ -1,7 +1,7 @@
 {
   "name": "evjjenui",
   "scripts": {
-    "watch": "NODE_ENV=development webpack serve",
+    "start": "NODE_ENV=development webpack serve",
     "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
     "build": "NODE_ENV=production webpack"
   },

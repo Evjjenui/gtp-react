@@ -1,0 +1,65 @@
+nav {
+  width: 63px;
+  padding: 80px 0 80px 20px;
+  background-color: hsl(200, 50%, 10%);
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+  @include transition(ease 0.4s width);
+  overflow: hidden;
+
+  .nav-btn {
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    cursor: pointer;
+
+    i {
+      font-size: 1.2em;
+      color: hsl(28, 90%, 60%);
+    }
+  }
+
+  ul {
+    list-style: none;
+    width: 190px;
+    height: 100%;
+    overflow-y: scroll;
+    white-space: nowrap;
+
+    li {
+      padding: 10px 0;
+      font-weight: 600;
+
+      i {
+        text-align: center;
+        font-size: 1.2em;
+        text-align: center;
+      }
+
+      span {
+        padding-left: 20px;
+      }
+
+      a {
+        color: hsl(28, 90%, 60%);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+
+        &.active,
+        &:hover {
+          color: hsl(0, 0%, 88%);
+        }
+      }
+    }
+  }
+}
+
+.nav-opened {
+  nav {
+    width: 190px;
+  }
+}
