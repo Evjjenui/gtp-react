@@ -1,10 +1,12 @@
 nav {
+  width: 63px;
   padding: 80px 0 80px 20px;
-  width: 189px;
   background-color: hsl(200, 50%, 10%);
   height: 100%;
   position: relative;
   flex-shrink: 0;
+  @include transition(ease 0.4s width);
+  overflow: hidden;
 
   .nav-btn {
     display: inline-block;
@@ -22,8 +24,10 @@ nav {
 
   ul {
     list-style: none;
+    width: 190px;
     height: 100%;
     overflow-y: scroll;
+    white-space: nowrap;
 
     li {
       padding: 10px 0;
@@ -36,7 +40,7 @@ nav {
       }
 
       span {
-        padding-left: 5px;
+        padding-left: 20px;
       }
 
       a {
@@ -51,5 +55,11 @@ nav {
         }
       }
     }
+  }
+}
+
+.nav-opened {
+  nav {
+    width: 190px;
   }
 }

@@ -1,12 +1,16 @@
 import React from "react";
 import { NavLink} from "react-router-dom";
 
+const ClickHandler = () => {
+  document.querySelector('body').classList.toggle('nav-opened');
+}
+
 const Navigation = () => {
   return ( 
     <nav>
       <div
         className="nav-btn"
-        onClick={(e) => ClickHandler(e)}>
+        onClick={(e) => ClickHandler()}>
         <i className="bx bx-menu"></i>  
       </div>
       <ul>

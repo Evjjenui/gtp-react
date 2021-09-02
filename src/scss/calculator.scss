@@ -1,18 +1,8 @@
-html,
-body {
-  font-family: 'DejaVu Sans Mono for Powerline', sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .calculator {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
-  height: 100%;
+  height: 50%;
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -224,103 +214,3 @@ h1 {
     line-height: 24px;
   }
 }
-// Blog
-.blog {
-  &-list {
-    margin: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    color: $color-end;
-  }
-
-  &-item {
-    margin: 15px 20px 15px 0;
-    width: 100%;
-    max-width: calc(33.333% - 20px);
-    cursor: pointer;
-    @include transition(ease 0.25s box-shadow);
-    @include border-radius(8px);
-    @include box-shadow(0 0 5px 1px rgba(#000, 0.1));
-
-    &:hover {
-      @include box-shadow(0 0 5px 1px rgba(#000, 0.35));
-    }
-
-    button {
-      position: relative;
-      z-index: 10;
-      width: 100px;
-      margin: 0 12px 12px;
-      padding: 7px 12px;
-      background-color: #fff;
-      border: 1px solid #bd072f;
-      text-decoration: none;
-      font-weight: 500;
-      color: #bd072f;
-      @include border-radius(5px);
-      @include transition(0.25s linear all);
-      cursor: pointer;
-
-      &:hover {
-        background-color: #bd072f;
-        color: #fff;
-      }
-    }
-
-    a {
-      display: block;
-      padding: 12px;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    p {
-      margin: 15px 0;
-    }
-  }
-
-  &-form {
-    margin: 20px 20px;
-    text-align: left;
-
-    h2 {
-      margin-bottom: 20px;
-    }
-  }
-
-  &-content {
-    margin: 20px;
-
-    article * {
-      margin: 0 0 15px;
-      display: block;
-    }
-  }
-
-  &-head {
-    display: flex;
-  }
-
-  &-links {
-    margin-left: auto;
-
-    a {
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0 10px;
-      padding: 7px 12px;
-      @include border-radius(5px);
-      border: 1px solid #00ce9a;
-      text-decoration: none;
-      font-weight: 500;
-      color: #00ce9a;
-      @include transition(0.25s linear all);
-
-      &:hover {
-        background-color: #00ce9a;
-        color: #fff;
-      }
-    }
-  }
-}
-// Blog end

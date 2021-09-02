@@ -5,7 +5,7 @@ const ModalItem = ({itemInfo, ...rest}) => {
   function ClickHandler(e) {
     const { onChange } = {...rest};
     onChange(e);
-    e.target.parentElement.remove();
+    e.target.parentElement.parentElement.remove();
   }
 
   return (
@@ -16,10 +16,7 @@ const ModalItem = ({itemInfo, ...rest}) => {
       <button
         className='delete'
         onClick={(e) => ClickHandler(e)}>
-        <box-icon
-          color='hsl(0, 0%, 17%)'
-          name='trash'>
-        </box-icon>
+        <i className="bx bx-trash"></i>
       </button>
     </div>
   );
