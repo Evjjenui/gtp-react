@@ -61,7 +61,9 @@ class App extends Component {
               </div>
             </Route>
             <Route path='/task-planner'>
-              <TaskPlanner />
+              <div className="container">
+                <TaskPlanner />
+              </div>
             </Route>
           </Switch>
           

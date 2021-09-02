@@ -1,0 +1,65 @@
+// FORM
+.form-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+
+  label {
+    min-width: 160px;
+    margin-right: 10px;
+    font-size: 0.9em;
+  }
+
+  input {
+    @include border-radius(4px);
+    @include box-shadow(none);
+    min-width: 240px;
+    border: 1px solid hsl(0, 0%, 36%);
+    line-height: 32px;
+    height: 34px;
+    padding: 0 7px;
+    background-color: hsl(0, 0%, 100%);
+    font-size: 13px;
+
+    & + button {
+      margin-left: 20px;
+      font-size: 0.75em;
+    }
+  }
+
+  textarea {
+    display: block;
+    height: 100px;
+    min-width: 240px;
+    border: 1px solid hsl(0, 0%, 36%);
+    padding: 10px 7px;
+    font-size: 1.1em;
+    line-height: 1.1em;
+    resize: none;
+    @include border-radius(4px);
+    @include box-shadow(none);
+  }
+}
+
+form,
+.form-item {
+  button {
+    font-size: 0.85em;
+    line-height: 1.2em;
+    cursor: pointer;
+    padding: 0.5em 2em;
+    text-align: center;
+    font-weight: bold;
+    color: hsl(28, 90%, 60%);
+    background-color: hsl(199, 49%, 10%);
+    border: 1px solid hsl(199, 49%, 10%);
+    @include border-radius(4px);
+    @include transition(0.35s ease background, 0.35s ease color);
+
+    &:hover {
+      background-color: transparent;
+      color: hsl(199, 49%, 10%);
+    }
+  }
+}
+// FORM END
