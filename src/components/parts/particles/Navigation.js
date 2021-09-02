@@ -1,24 +1,19 @@
 import React from "react";
 import { NavLink} from "react-router-dom";
-import "boxicons";
 
 const Navigation = () => {
   return ( 
     <nav>
-      <div className="nav-btn">
-        <box-icon
-          color="hsl(28, 90%, 60%)"
-          name='menu'>
-        </box-icon>
+      <div
+        className="nav-btn"
+        onClick={(e) => ClickHandler(e)}>
+        <i className="bx bx-menu"></i>  
       </div>
       <ul>
         <li>
           <NavLink
             exact to='/'>
-            <box-icon
-              color="hsl(28, 90%, 60%)"
-              name='globe'>
-            </box-icon>
+            <i className="bx bx-globe"></i> 
             <span>Main</span>
           </NavLink>
         </li>
@@ -26,11 +21,7 @@ const Navigation = () => {
           <NavLink
             activeClassName="active"
             to='/calculator'>
-            <box-icon
-              color="hsl(28, 90%, 60%)"
-              name='calculator'
-              type='solid'>
-            </box-icon>
+            <i className="bx bx-calculator"></i> 
             <span>Calculator</span>
           </NavLink>
         </li>
@@ -45,10 +36,7 @@ const Navigation = () => {
           <NavLink
             activeClassName="active"
             to='/krestiki'>
-            <box-icon
-              color="hsl(28, 90%, 60%)"
-              name='border-all'>
-            </box-icon>
+            <i className="bx bx-border-all"></i> 
             <span>Krestiki</span>
           </NavLink>
         </li>
@@ -56,10 +44,7 @@ const Navigation = () => {
           <NavLink
             activeClassName="active"
             to='/timer'>
-            <box-icon
-              color="hsl(28, 90%, 60%)"
-              name='timer'>
-            </box-icon>
+            <i className="bx bx-timer"></i> 
             <span>Timer</span>
           </NavLink>
         </li>
@@ -67,10 +52,7 @@ const Navigation = () => {
           <NavLink
             activeClassName="active"
             to='/todo'>
-            <box-icon
-              color="hsl(28, 90%, 60%)"
-              name='list-check'>
-            </box-icon>
+            <i className="bx bx-list-check"></i> 
             <span>Todo</span>
           </NavLink>
         </li>
@@ -78,10 +60,7 @@ const Navigation = () => {
           <NavLink
             activeClassName="active"
             to='/blog'>
-             <box-icon
-              color="hsl(28, 90%, 60%)"
-              name='library'>
-            </box-icon> 
+             <i className="bx bx-library"></i> 
             <span>Blog</span>
           </NavLink>
         </li>
@@ -89,10 +68,7 @@ const Navigation = () => {
           <NavLink
             activeClassName="active"
             to='/other'>
-            <box-icon
-              color="hsl(28, 90%, 60%)"
-              name='dots-horizontal-rounded'>
-            </box-icon>
+            <i className="bx bx-dots-horizontal-rounded"></i> 
             <span>Other</span>
           </NavLink>
         </li>

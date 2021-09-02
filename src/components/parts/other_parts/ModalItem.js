@@ -9,14 +9,18 @@ const ModalItem = ({itemInfo, ...rest}) => {
   }
 
   return (
-    <div className="modal-item">
+    <div className='modal-item'>
       <span>Name: {itemInfo.name}</span>
       <span>Additional info: {itemInfo.addInfo}</span>
       <span>Price: {itemInfo.price}</span>
       <button
-        className="delete"
-        onClick={(e) => ClickHandler(e)}
-        >X</button>
+        className='delete'
+        onClick={(e) => ClickHandler(e)}>
+        <box-icon
+          color='hsl(0, 0%, 17%)'
+          name='trash'>
+        </box-icon>
+      </button>
     </div>
   );
 }

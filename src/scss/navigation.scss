@@ -1,6 +1,6 @@
 nav {
   padding: 80px 0 80px 20px;
-  width: 200px;
+  width: 189px;
   background-color: hsl(200, 50%, 10%);
   height: 100%;
   position: relative;
@@ -13,10 +13,11 @@ nav {
     left: 20px;
     top: 20px;
     cursor: pointer;
-  }
 
-  box-icon {
-    color: hsl(28, 90%, 60%);
+    i {
+      font-size: 1.2em;
+      color: hsl(28, 90%, 60%);
+    }
   }
 
   ul {
@@ -25,8 +26,14 @@ nav {
     overflow-y: scroll;
 
     li {
-      padding: 7px 0;
+      padding: 10px 0;
       font-weight: 600;
+
+      i {
+        text-align: center;
+        font-size: 1.2em;
+        text-align: center;
+      }
 
       span {
         padding-left: 5px;

@@ -43,3 +43,8 @@ select {
   -moz-appearance: none;
   appearance: none;
 }
+
+.bx:before {
+  font-size: inherit;
+  color: inherit;
+}

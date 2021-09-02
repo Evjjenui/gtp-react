@@ -24,11 +24,13 @@ function Todo() {
     <div>
       <p><b>Todo List</b></p>
       <form onSubmit = {(e) => submitHandler(e)}>
-        <input
-          onChange = {(e) => setText(e.target.value)}
-          value = {text}
-        />
-        <button>Add</button>
+        <div className="form-item">
+          <input
+            onChange = {(e) => setText(e.target.value)}
+            value = {text}
+          />
+          <button>Add</button>
+        </div>
       </form>
         <TodoList list={items}/>
     </div>
