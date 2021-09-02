@@ -10,19 +10,21 @@ class TicTacToe extends React.Component {
     this.fieldStateCheck = this.fieldStateCheck.bind(this);
     this.state = {
       items: ['', '', '', '', '', '', '', '', ''],
-      squareSign: 'x'
+      squareSign: 'x',
+      gameWinner: ''
     }
   };
-
+  
   resetGame() {
     this.setState({
       items: ['', '', '', '', '', '', '', '', ''],
-      squareSign: 'x'
+      squareSign: 'x',
+      gameWinner: ''
     })
   }
 
   fieldStateCheck() {
-
+    
     if (
       this.state.items[0] === 'x' && this.state.items[1] === 'x' && this.state.items[2] === 'x' ||
       this.state.items[3] === 'x' && this.state.items[4] === 'x' && this.state.items[5] === 'x' ||
@@ -35,7 +37,7 @@ class TicTacToe extends React.Component {
       this.state.items[0] === 'x' && this.state.items[4] === 'x' && this.state.items[8] === 'x' ||
       this.state.items[2] === 'x' && this.state.items[4] === 'x' && this.state.items[6] === 'x'
      ) {
-      return alert(`"X" WIN !!!`);
+      this.setState({gameWinner: `"X" WIN !!!`});
      } else if (
       this.state.items[0] === 'o' && this.state.items[1] === 'o' && this.state.items[2] === 'o' ||
       this.state.items[3] === 'o' && this.state.items[4] === 'o' && this.state.items[5] === 'o' ||
@@ -48,7 +50,7 @@ class TicTacToe extends React.Component {
       this.state.items[0] === 'o' && this.state.items[4] === 'o' && this.state.items[8] === 'o' ||
       this.state.items[2] === 'o' && this.state.items[4] === 'o' && this.state.items[6] === 'o'
      ) {
-      return alert(`"O" WIN !!!`);
+      this.setState({gameWinner: `"O" WIN !!!`});
      } else {
       return;
     }
@@ -73,6 +75,7 @@ class TicTacToe extends React.Component {
               clickHandler={ () => this.updateItem(nextSign, index)}/>
           ))}
         </div>
+        <span>Result: { this.state.gameWinner } </span>
         <div className="form-item">
           <button
             onClick={this.resetGame}>
