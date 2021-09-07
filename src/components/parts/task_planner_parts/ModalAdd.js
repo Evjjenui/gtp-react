@@ -1,30 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-const ModalAdd = ({isOpen, onClose, handleSubmit, value, children}) => {
+const ModalAdd = ({isOpen, onClose, handleSubmit, children, ...rest}) => {
+  const { modalText } = {...rest}
+  const [ isEdit, setIsEdit ] = useState(false);
+  const [ valueText, setValueText ] = useState('');
+  
+  const onCloseHandler = () => {
+    onClose();
+  };
+
+  const submitHadler = (e) => {
+    e.preventDefault();
+    handleSubmit(valueText);
+    setValueText('');
+  }
+  
   if (!isOpen) return null;
 
   return ReactDOM.createPortal(
     <div className="popup-overlay">
       <div className="modal modal-add">
         <p>Add new task</p>
-        <form onSubmit={ handleSubmit }>
+        <form onSubmit = { submitHadler }>
           <textarea
-            placeholder="Type new task..." 
+            placeholder = "Type new task..."
+            onChange = { (e) => setValueText(e.target.value) }
+            value = { modalText || valueText || ''}
           />
           <button
             className="button-green">
-            Add
+            { isEdit ? 'Edit' : 'Add' }
           </button>
-          <button
-            onClick={onClose}
+          <a
+            onClick ={ onCloseHandler }
             className="button-red">
             Close
-          </button>
+          </a>
         </form>
       </div>
     </div>
-    ,document.body);
+    , document.body);
 }
  
 export default ModalAdd;
