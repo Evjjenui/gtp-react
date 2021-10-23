@@ -1,7 +1,7 @@
 import React from 'react';
-import ModalAdd from './ModalAdd';
+import ModalEdit from './ModalEdit';
 
-const Task = ({ taskText, onEdit, isOpen, ...rest }) => {
+const Task = ({ taskText, onEdit, isOpened, ...rest }) => {
   
   function onEdit() {
     // const { textEdit } = { ...rest };
@@ -26,12 +26,12 @@ const Task = ({ taskText, onEdit, isOpen, ...rest }) => {
       </button>
       <p>{ taskText }</p>
 
-      {/* <ModalAdd
-        isOpen = { open }
+      <ModalEdit
+        toEdit = { open }
         modalText = { taskText }
         handleSubmit={ submitHandler }
         onClose = {() => setOpen(false)}
-      /> */}
+      />
     </div>
   )
 }

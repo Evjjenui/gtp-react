@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import Modal from './Modal';
 
-const ModalAdd = ({toAdd, onClose, handleSubmit, children, ...rest}) => {
+const ModalEdit = ({toEdit, onClose, handleSubmit, children, ...rest}) => {
   const { modalText } = {...rest}
   const [ isEdit, setIsEdit ] = useState(false);
   const [ valueText, setValueText ] = useState('');
@@ -17,7 +16,7 @@ const ModalAdd = ({toAdd, onClose, handleSubmit, children, ...rest}) => {
     setValueText('');
   }
   
-  if (!toAdd) return null;
+  if (!toEdit) return null;
 
   return ReactDOM.createPortal(
     <div className="popup-overlay">
@@ -32,7 +31,7 @@ const ModalAdd = ({toAdd, onClose, handleSubmit, children, ...rest}) => {
           <button
             className="button-green">
             {/* { isEdit ? 'Edit' : 'Add' } */}
-            Add
+            Edit
           </button>
           <a
             onClick ={ onCloseHandler }
@@ -45,4 +44,4 @@ const ModalAdd = ({toAdd, onClose, handleSubmit, children, ...rest}) => {
     , document.body);
 }
  
-export default ModalAdd;
+export default ModalEdit;

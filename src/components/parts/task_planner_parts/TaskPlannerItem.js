@@ -19,7 +19,7 @@ const TaskPlannerItem = () => {
   return (
     <div className="task-planner_item">
       <div className="task-planner_item_top-bar">
-        <button onClick={() => setOpen(true)}>
+        <button onClick={ () => setOpen(true) }>
           <i className="bx bx-plus"></i>
         </button>
       </div>
@@ -37,9 +37,9 @@ const TaskPlannerItem = () => {
       </div>
 
       <ModalAdd
-        isOpen={open}
+        toAdd = { open }
         handleSubmit={ submitHandler }
-        onClose = {() => setOpen(false)}
+        onClose = { () => setOpen(false) }
       />
     </div>  
   );
