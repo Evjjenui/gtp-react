@@ -60,7 +60,7 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'build'),
     writeToDisk: true,
     hot: true,
-    port: 4000
+    port: 5000
   },
 
   mode: process.env.NODE_ENV || 'development'

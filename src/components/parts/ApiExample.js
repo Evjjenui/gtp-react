@@ -1,51 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ApiList from "./particles/ApiList";
 
-class ApiExample extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      items: []
-    }
-  }
+function ApiExample () {
+  const [itemsList, setItemsList] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(true);
+  const [error, setError] = useState('No Error\'s');
 
-  componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/todos")
-      .then(response => response.json())
-      .then(
-        (res) => {
-          this.setState({
-            items: res,
-            isLoaded: true
-          })
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          })
-        }
-      )
-  }
+  useEffect(() => {
+    fetch('http://localhost:4040/blogs')
 
-  render() {
-    const {
-      state: {
-        error,
-        items,
-        isLoaded}
-    } = this;
+    .then((res) => {
+      if (!res.ok) {
+        throw Error ('Could not fetch the data');
+      }
+      return res.json();
+    })
+    .then((data) => {
+      setItemsList(data)
+      setIsLoaded(false)
+      setError('');
+    })
+    .catch((err) => {
+      if (err.name === 'AbortError') {
+        return;
+      } else {
+        setIsLoaded(false);
+        setError(err.message);
+      }
+    })
+  }, []);
 
-    if (error) {
-      return <p>Error: {error.message}</p>
-    } else if (!isLoaded) {
-      return <p>Loading ...</p>
-    } else {
-      return (
+  if (error) {
+    return <p>Error: {error.message}</p>
+  } else if (isLoaded) {
+    return <p>Loading ...</p>
+  } else {
+    return (
+      <>
         <ol>
-          {items.map(item => {
+          {itemsList.map(item => {
             return (
               <ApiList
                 key={item.id}
@@ -54,8 +47,8 @@ class ApiExample extends React.Component {
             )
           })}
         </ol>
-      )
-    }
+      </>
+    )
   }
 }
 

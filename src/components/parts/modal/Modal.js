@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import ModalList from './particles/ModalList';
-import { FormInput } from './particles/FormInput';
+import ModalList from './parts/ModalList';
+import { FormInput } from '../particles/FormInput';
 
 function Modal() {
   const [itemsList, setItemsList] = useState([]);
@@ -10,7 +10,7 @@ function Modal() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:8000/modal_items')
+    fetch('http://localhost:4040/modal_items')
 
     .then((res) => {
       if (!res.ok) {
@@ -30,7 +30,6 @@ function Modal() {
         setIsPending(false);
         setError(err.message);
       }
-
     })
   }, []);
   
@@ -46,15 +45,16 @@ function Modal() {
       date: new Date().toISOString().slice(0, 10),
       id: Date.now()
     }
-    
-    fetch(('http://localhost:8000/modal_items'), {
+
+    const requestOptions = {
       method: 'POST',
       headers:  {'Content-Type': 'application/json' },
       body: JSON.stringify(newItem)
-    }).then(() => {
-      // console.log('item added');
-    })
-    
+    }
+
+    fetch(('http://localhost:4040/modal_items'),requestOptions)
+      .then(response => response.json())
+
     setItemsList([...itemsList, newItem]);
     setValues({});
   }
@@ -62,7 +62,7 @@ function Modal() {
   function removeItem(id) {
     // let newList = itemsList.filter(item => item.id !== id);
     // setItemsList(newList)
-    fetch(('http://localhost:8000/modal_items/' + id), {
+    fetch(('http://localhost:4040/modal_items/' + id), {
       method: 'DELETE'
     });
   }

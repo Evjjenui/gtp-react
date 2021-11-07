@@ -1,5 +1,5 @@
 import React from 'react';
-import ModalItem from '../other_parts/ModalItem';
+import ModalItem from './ModalItem';
 
 
 const ModalList= ({ onDelete, list }) => {

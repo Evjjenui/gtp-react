@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch} from "react-router-dom";
-import BlogList from "./particles/BlogList"
-import BlogPost from "./BlogPost"
-import PostCreate from "./PostCreate";
+import BlogList from "./parts/BlogList"
+import BlogPost from "./parts/BlogPost"
+import PostCreate from "./parts/PostCreate";
 
 const Blog = () => {
   let { path, url } = useRouteMatch();
