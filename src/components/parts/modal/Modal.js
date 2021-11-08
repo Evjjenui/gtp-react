@@ -60,8 +60,6 @@ function Modal() {
   }
   
   function removeItem(id) {
-    // let newList = itemsList.filter(item => item.id !== id);
-    // setItemsList(newList)
     fetch(('http://localhost:4040/modal_items/' + id), {
       method: 'DELETE'
     });
