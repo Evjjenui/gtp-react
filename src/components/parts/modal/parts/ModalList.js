@@ -25,7 +25,7 @@ const ModalList = ({ onDelete, list }) => {
         <ModalItem
           key={item.id}
           itemInfo={item}
-          onChange={() => deleteItem(item.id)}
+          onDelete={() => deleteItem(item.id)}
           />
       ))}
     </>

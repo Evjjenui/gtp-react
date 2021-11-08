@@ -7,8 +7,8 @@ const ModalItem = ({itemInfo, HeadItem, ...rest}) => {
 
   const deleteHandler = (e) => {
     const { onDelete } = {...rest};
-    onDelete(e);
-    e.target.parentElement.parentElement.remove();
+    onDelete();
+    e.target.parentElement.parentElement.parentElement.remove();
   }
 
   if (!isEditing) {

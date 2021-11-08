@@ -7,7 +7,7 @@ function ApiExample () {
   const [error, setError] = useState('No Error\'s');
 
   useEffect(() => {
-    fetch('http://localhost:4040/blogs')
+    fetch('https://mighty-meadow-api.herokuapp.com/blogs')
 
     .then((res) => {
       if (!res.ok) {
