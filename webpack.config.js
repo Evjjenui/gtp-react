@@ -56,11 +56,13 @@ module.exports = {
 
   // Development server
   devServer: {
-    historyApiFallback: true,
-    contentBase: path.resolve(__dirname, 'build'),
-    writeToDisk: true,
+    port: 5000,
     hot: true,
-    port: 5000
+    historyApiFallback: true,
+    static: path.resolve(__dirname, 'build'),
+    devMiddleware: {
+      writeToDisk: true
+    },
   },
 
   mode: process.env.NODE_ENV || 'development'
