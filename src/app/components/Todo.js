@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import TodoList from "./particles/TodoList.js";
+import TodoList from "./parts/particles/TodoList.js";
 
 function Todo() {
   const [text, setText] = useState('');

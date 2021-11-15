@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
-import Calculator from "./parts/calculator/Calculator";
-import TicTacToe from "./parts/TicTacToe";
-import Timer from "./parts/Timer";
-import Todo from "./parts/Todo";
-import Other from "./parts/Other";
-import Blog from "./parts/posts/Blog";
-import Navigation from "./parts/particles/Navigation";
+import Calculator from "./components/parts/calculator/Calculator";
+import TicTacToe from "./components/TicTacToe";
+import Timer from "./components/Timer";
+import Todo from "./components/Todo";
+import Other from "./components/Other";
+import Blog from "./components/parts/posts/Blog";
+import Navigation from "./components/parts/particles/Navigation";
 
 
 class App extends Component {

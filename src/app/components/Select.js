@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import SelectItem from "./particles/SelectItem";
+import SelectItem from "./parts/particles/SelectItem";
 
 function Select(props) {
   const [items, setItems] = useState([]);
