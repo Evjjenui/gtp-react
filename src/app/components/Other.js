@@ -1,9 +1,9 @@
 import React from "react";
 
-import Tabs from "./other_parts/Tabs"
+import Tabs from "./parts/other_parts/Tabs"
 import ApiExample from "./ApiExample"
 import Select from "./Select"
-import Modal from "./modal/Modal"
+import Modal from "./parts/modal/Modal"
 
 const Other = () => {
 

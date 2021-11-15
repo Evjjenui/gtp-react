@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import ApiList from "./particles/ApiList";
+import ApiList from "./parts/particles/ApiList";
+import Counter from "../../features/counter/Counter";
 
 function ApiExample () {
   const [itemsList, setItemsList] = useState([]);
@@ -31,12 +32,13 @@ function ApiExample () {
   }, []);
 
   if (error) {
-    return <p>Error: {error.message}</p>
+    return <p>Error: {error}</p>
   } else if (isLoaded) {
     return <p>Loading ...</p>
   } else {
     return (
       <>
+        <Counter/>
         <ol>
           {itemsList.map(item => {
             return (
