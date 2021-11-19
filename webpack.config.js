@@ -1,10 +1,10 @@
 const path = require('path');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
-  
+  entry: './src/index.js',
+
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name]_bundle.js',
@@ -13,43 +13,42 @@ module.exports = {
 
   module: {
     rules: [
-
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader',
         },
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
-          "style-loader",
+          'style-loader',
           // Translates CSS into CommonJS
-          "css-loader",
+          'css-loader',
           // Compiles Sass to CSS
-          "sass-loader",
-        ]
+          'sass-loader',
+        ],
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/ ,
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'fonts/'
-            }
-          }
-        ]
-      }
-    ]
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
+    ],
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
+      template: './src/index.html',
     }),
     new CleanWebpackPlugin(),
   ],
@@ -58,16 +57,12 @@ module.exports = {
   devServer: {
     port: 5000,
     hot: true,
-<<<<<<< HEAD
-    port: 5000
-=======
     historyApiFallback: true,
     static: path.resolve(__dirname, 'build'),
     devMiddleware: {
-      writeToDisk: true
+      writeToDisk: true,
     },
->>>>>>> master
   },
 
-  mode: process.env.NODE_ENV || 'development'
-}
+  mode: process.env.NODE_ENV || 'development',
+};
