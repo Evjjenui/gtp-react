@@ -1,12 +1,12 @@
-import React, { useState }  from 'react';
-import TaskPlannerItem from './task_planner_parts/TaskPlannerItem'
+import React from 'react';
+import TaskPlannerItem from './parts/task_planner/TaskPlannerItem';
 
 const TaskPlanner = () => {
-  return ( 
+  return (
     <div className="task-planner">
       <TaskPlannerItem />
     </div>
   );
-}
- 
+};
+
 export default TaskPlanner;

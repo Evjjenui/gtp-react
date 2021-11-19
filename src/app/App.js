@@ -7,7 +7,7 @@ import Timer from './components/Timer';
 import Todo from './components/Todo';
 import Other from './components/Other';
 import Blog from './components/parts/posts/Blog';
-import TaskPlanner from './parts/TaskPlanner';
+import TaskPlanner from './components/TaskPlanner';
 import Navigation from './components/parts/particles/Navigation';
 
 class App extends Component {
