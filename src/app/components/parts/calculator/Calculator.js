@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
-import ButtonAction from "./particles/ButtonAction";
-import ButtonNumber from "./particles/ButtonNumber";
-import CalculatorDisplay from "./particles/CalculatorDisplay";
-import calcTransform from "./calc_logic/calc_transformations";
+import ButtonAction from "../particles/ButtonAction";
+import ButtonNumber from "../particles/ButtonNumber";
+import CalculatorDisplay from "./parts/CalculatorDisplay";
+import calcTransform from "./parts/calcTransformations";
 
 
 class Calculator extends React.Component {

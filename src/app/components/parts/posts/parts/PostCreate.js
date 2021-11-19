@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import { FormInput } from './particles/FormInput';
-import { FormTextarea } from './particles/FormTextarea';
+import { FormInput } from '../../particles/FormInput';
+import { FormTextarea } from '../../particles/FormTextarea';
 
 const PostCreate = () => {
   const [values, setValues] = useState({});
@@ -17,16 +17,19 @@ const PostCreate = () => {
       details: values.details,
       date: new Date().toISOString().slice(0, 10)
     }
-      
-    fetch(('http://localhost:8000/blogs'), {
+    
+    const requestOptions = {
       method: 'POST',
       headers:  {'Content-Type': 'application/json' },
       body: JSON.stringify(newItem)
-    }).then(() => {
-      console.log('post added');
-      setIsPending(false);
-      history.push('/blog');
-    })
+    }
+
+    fetch(('http://localhost:4040/blogs'), requestOptions)
+      .then(response => response.json())
+      .then(() => {
+        setIsPending(false);
+        history.push('/blog');
+      })
   }
 
   return (

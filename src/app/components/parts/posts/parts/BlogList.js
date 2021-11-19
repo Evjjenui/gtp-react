@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link} from "react-router-dom";
-import useFetch from "../useFetch";
+import useFetch from "../../../useFetch";
 
 
 const BlogList = () => {
-  const { data: blogs, pending, errorInfo} = useFetch('http://localhost:8000/blogs');
+  const { data: blogs, pending, errorInfo} = useFetch('http://localhost:4040/blogs');
 
   const handleDelete = (e, id) => {
     
-    fetch(('http://localhost:8000/blogs/' + id), {
+    fetch(('http://localhost:4040/blogs/' + id), {
       method: 'DELETE'
     });
 

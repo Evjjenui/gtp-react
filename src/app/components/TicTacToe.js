@@ -1,6 +1,6 @@
 import React from 'react';
-import TicItem from './particles/TicItem'
-import krestiki from './krestiki/krestiki'
+import TicItem from './parts/particles/TicItem'
+import krestiki from './parts/krestiki/krestiki'
 
 class TicTacToe extends React.Component {
   constructor(props) {

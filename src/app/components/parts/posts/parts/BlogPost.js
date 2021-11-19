@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import useFetch from "./useFetch";
+import useFetch from "../../../useFetch";
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const { data: blog, pending, errorInfo} = useFetch('http://localhost:8000/blogs/' + slug);
+  const { data: blog, pending, errorInfo} = useFetch('http://localhost:4040/blogs/' + slug);
 
   return ( 
     
